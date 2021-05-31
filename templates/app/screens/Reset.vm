@@ -1,0 +1,14 @@
+<html>
+<body bgcolor="#ffffff" link="#000000" vlink="#000000" alink="#000000" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" background="/mag/img/backgrounds/bg_content.gif">
+<center>
+<br>&nbsp;<br>
+<table>
+<tr><td>
+<img src="/mag/img/ornaments/mini4RK.gif"><br>
+<font color="#cccccc">Resetting your Session, please standy by ...</font>
+</td></tr></table>
+<script lanaguge="javascript">
+top.location.href = '$link.setPage("Entrance.vm")';
+</script>         
+</body>
+</html>

@@ -1,0 +1,154 @@
+				<table border="0" cellpadding="0" cellspacing="0" width="231">
+					<tr height="1">
+							<td height="1" colspan="6"><img src="/mag/img/super-header/locations_de.gif" width="231" height="56" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td height="1" colspan="6"><img src="/mag/img/space.gif" width="231" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" bgcolor="#666633"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" bgcolor="#666633"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#dede94"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" bgcolor="#dede94"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" bgcolor="#dede94"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#dede94"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="5">
+							<td width="1" bgcolor="#666633" rowspan="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="1" bgcolor="#dede94" rowspan="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="5" bgcolor="#cccc66" rowspan="3"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td width="222" bgcolor="#cccc66" height="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td width="1" bgcolor="#adad5a" rowspan="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="1" bgcolor="#666633" rowspan="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr>
+							<td width="222" bgcolor="#cccc66">
+								<table border="0" cellpadding="0" cellspacing="0" width="207">
+									<tr>
+										<td width="175"></td>
+										<td width="10"></td>
+										<td width="22"></td>
+									</tr>
+									<tr>
+										<td valign="bottom" width="175" class="pinktext">
+											<form name="fmSelect" action="/mag/servlet/mag/template/locations%2CShowLocations.vm" method="post">
+           							#foreach ($char in $vecCharacter)
+                  				#set( $c="first" )
+                  				#set( $bCloseSelect=false )
+                  				#foreach( $key in $char )
+                      			#if( $c.equals("first") )
+                      				<span class="pinktext">$key.getCharacterId()</span><br>
+                      				<select name="cmb_$key.getCharacterId()" size="3" class="input175">                   					                         	
+                              	<option value="$key.getKeywordId()"
+                               	#if($key.isSelected())
+                                	selected
+                                #end
+                                >$key.getName()
+                          	#else
+                              	<option value="$key.getKeywordId()"
+                              	#if($key.isSelected())
+                              		selected
+                              	#end
+                              	>$key.getName()</option>
+                          	#end
+                          	#set($c="more")
+                          	#set( $bCloseSelect=true )
+                      		#end
+                      		#if( $bCloseSelect )
+                      			</select><br>	
+                      		#end
+           							#end
+           							<span class="pinktext">Bezirk</span><br/>
+           							<select name="cmb_district" size="3" class="input175">
+           							#foreach( $district in $vecDistricts )
+           								<option value="$district">$district</option>
+           							#end
+           							</select>
+           						</form>
+										</td>
+										<td width="10"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+										<td width="22" valign="bottom"><a href="javascript:document.forms['fmSelect'].submit()"><img src="/mag/img/buttons/go_de.gif" width="22" height="18" border="0"></a></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+						<tr height="10">
+							<td height="10" width="222" bgcolor="#cccc66"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+						</tr>
+						<tr height="2">
+							<td height="2" colspan="2" bgcolor="#dede94"><img src="/mag/img/ornaments/dotted_line_green_277_px.gif" width="227" height="2" border="0"></td>
+						</tr>
+						<tr height="5">
+							<td width="5" height="5" bgcolor="#dede94"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td height="5" width="222" bgcolor="#dede94"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+						</tr>
+						<tr height="10">
+							<td width="5" height="10" bgcolor="#dede94"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td height="10" width="222" bgcolor="#dede94"><img src="/mag/img/headlines/2_alphabetisch_de.gif" width="175" height="5" border="0" vspace="3"><span class="copy9"><br>
+								</span><img src="/mag/img/buttons/keyboard-fake.gif" width="175" height="55" border="0" usemap="#map"></td>
+						</tr>
+						<tr height="10">
+							<td width="5" height="10" bgcolor="#dede94"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td height="10" width="222" bgcolor="#dede94"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#adad5a"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" bgcolor="#adad5a"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" bgcolor="#adad5a"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#666600"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" bgcolor="#666633"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" bgcolor="#666633"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+					</table>
+	
+<MAP NAME="map">
+<!-- #$-:Image Map file created by GIMP Imagemap Plugin -->
+<!-- #$-:GIMP Imagemap Plugin by Maurits Rijk -->
+<!-- #$-:Please do not edit lines starting with "#$" -->
+<!-- #$VERSION:1.3 -->
+<!-- #$AUTHOR:Daniel Schmidt -->
+<AREA SHAPE="RECT" COORDS="156,17,157,18" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=g">
+<AREA SHAPE="RECT" COORDS="158,0,175,18" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=h">
+<AREA SHAPE="RECT" COORDS="17,19,34,36" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=i">
+<AREA SHAPE="RECT" COORDS="36,19,53,36" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=j">
+<AREA SHAPE="RECT" COORDS="55,19,72,36" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=k">
+<AREA SHAPE="RECT" COORDS="74,19,91,36" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=l">
+<AREA SHAPE="RECT" COORDS="110,36,111,37" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=m">
+<AREA SHAPE="RECT" COORDS="112,19,129,36" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=n">
+<AREA SHAPE="RECT" COORDS="131,19,148,36" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=o">
+<AREA SHAPE="RECT" COORDS="150,19,167,36" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=p">
+<AREA SHAPE="RECT" COORDS="123,38,139,54" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=w">
+<AREA SHAPE="RECT" COORDS="104,38,121,54" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=v">
+<AREA SHAPE="RECT" COORDS="85,38,102,54" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=u">
+<AREA SHAPE="RECT" COORDS="65,38,83,54" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=t">
+<AREA SHAPE="RECT" COORDS="47,38,64,54" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=s">
+<AREA SHAPE="RECT" COORDS="28,38,45,53" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=r">
+<AREA SHAPE="RECT" COORDS="9,38,26,54" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=q">
+<AREA SHAPE="RECT" COORDS="142,38,167,54" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=x">
+<AREA SHAPE="RECT" COORDS="93,19,110,36" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=m">
+<AREA SHAPE="RECT" COORDS="0,0,23,17" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=0">
+<AREA SHAPE="RECT" COORDS="25,0,42,17" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=a">
+<AREA SHAPE="RECT" COORDS="44,0,61,17" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=b">
+<AREA SHAPE="RECT" COORDS="63,0,80,17" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=c">
+<AREA SHAPE="RECT" COORDS="82,0,99,17" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=d">
+<AREA SHAPE="RECT" COORDS="101,0,118,17" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=e">
+<AREA SHAPE="RECT" COORDS="120,0,137,17" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=f">
+<AREA SHAPE="RECT" COORDS="139,0,156,17" HREF="/mag/servlet/mag/template/locations%2CShowLocations.vm?name=g">
+</MAP>

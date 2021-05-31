@@ -1,0 +1,58 @@
+.titel {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+font-weight: bold;
+text-decoration: none;
+color: #ffffff;
+}
+.heading {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: bold;
+text-decoration: none;
+color: #ff3399;
+}
+.subheading {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 11px;
+font-weight: bold;
+text-decoration: none;
+color: #000000;
+}
+.p {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: normal;
+text-decoration: none;
+color: #000000;
+}
+a {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: normal;
+text-decoration: none;
+color: #000000;
+}
+input.text {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: normal;;
+color: #000000;
+width: 250px;
+}
+textarea.normal {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: normal;;
+color: #000000;
+width: 460px;
+height: 100px;
+}
+textarea.list{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: normal;;
+color: #000000;
+width: 450px;
+height: 50px;
+}

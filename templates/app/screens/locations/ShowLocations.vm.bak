@@ -1,0 +1,166 @@
+$page.setTitle("Flyer Locations")
+$page.setBgColor("#ffffff")
+$page.setStyleSheet("/mag/css/style.css")
+
+$data.setLayoutTemplate("/locations/Index.vm")
+
+<table border="0" cellpadding="0" cellspacing="0" width="468">
+  <tr height="21">
+    <td colspan="2" height="21">
+      <table border="0" cellpadding="0" cellspacing="0" width="177" height="21">
+        <colgroup>
+          <col width="18">
+          <col width="134">
+          <col width="25">
+          <col width="3">
+          <col width="18">
+          <col width="245">
+          <col width="25">
+        </colgroup>
+        <tr height="7">
+          <td rowspan="3" width="18"><img src="/mag/img/layout/header_left_blue_small.gif" width="18" height="21" border="0"></td>
+          <td width="134" height="7"><img src="/mag/img/layout/header_top_blue.gif" width="134" height="7" border="0"></td>
+          <td rowspan="3" width="25"><img src="/mag/img/layout/header_right_blue_small.gif" width="25" height="21" border="0"></td>
+          <td width="3" rowspan="3"><img src="/mag/img/space.gif" width="3" height="1" border="0"></td>
+          <td rowspan="3" width="18"><img src="/mag/img/layout/header_left_blue_small.gif" width="18" height="21" border="0"></td>
+          <td width="245" height="7"><img src="/mag/img/layout/header_top_blue.gif" width="245" height="7" border="0"></td>
+          <td rowspan="3" width="25"><img src="/mag/img/layout/header_right_blue_small.gif" width="25" height="21" border="0"></td>
+        </tr>
+        <tr height="10">
+          <td width="134" height="10" class="tdbbleu3"><img src="/mag/img/headlines/nameundadresse_de.gif" width="134" height="10" border="0"></td>
+          <td width="245" height="10" class="tdbbleu3"><img src="/mag/img/headlines/wogehtslang_de.gif" width="188" height="10" border="0"></td>
+        </tr>
+        <tr height="4">
+          <td width="134" height="4"><img src="/mag/img/layout/header_bottom_blue.gif" width="134" height="4" border="0"></td>
+          <td width="245" height="4"><img src="/mag/img/layout/header_bottom_blue.gif" width="245" height="4" border="0"></td>
+        </tr>
+        <tr height="1">
+          <td height="1" colspan="6"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+          <td height="1" align="right"><img src="/mag/img/layout/contentbox_spacer_blue_rite.gif" width="10" height="1" border="0"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="458">
+      <table border="0" cellpadding="0" cellspacing="0" width="458">
+        <colgroup>
+          <col width="1">
+          <col width="4">
+          <col width="170">
+          <col width="1">
+          <col width="201">
+          <col width="2">
+          <col width="64">
+        </colgroup>
+        #set( $bIsLocation=false )
+        #foreach( $LocationKeywords in $vecLocationKeywords )
+        	#set( $bIsLocation=true )
+        	#set( $location=$LocationKeywords.getLocation() )
+        	#set( $vecTypes=$LocationKeywords.getTypes() )
+        	#set( $vecStyles=$LocationKeywords.getStyles() )
+          <tr>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+          </tr>
+          <tr>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="16" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="170" class="white"><span class="copy9"><b><a href="#">$location.getName()</a></b></span>&nbsp;
+            #foreach( $type in $vecTypes )
+            	$type.getName()&nbsp;
+            #end
+            &nbsp;/&nbsp;
+            #foreach( $style in $vecStyles )
+            	$style.getName()&nbsp;
+            #end
+          	</td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="201" class="tdgreyh" valign="middle">&nbsp;<span class="copy9">$!location.getAddress().getPubtrans()<br></span></td>
+            <td width="2" rowspan="3" background="/mag/img/ornaments/dotted_line_sub_vert.gif" rowspan="3"><img src="/mag/img/space.gif" width="2" height="4" border="0"></td>
+            <td width="64" class="white" rowspan="3" align="center" valign="top"><img src="/mag/img/space.gif" width="2" height="1" border="0"><br>
+              <a href="javascript:void()"><img src="/mag/img/ornaments/icn_myflyer_small.gif" width="47" height="16" border="0"></a>
+            </td>
+          </tr>
+          <tr>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="16" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="170" class="white"><span class="copy9">$location.getAddress().getStreet()&nbsp;$!location.getAddress().getNumber()<br></span></td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="201" class="tdgreyh" valign="middle">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="16" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="170" class="white"><span class="copy9">$location.getAddress().getZip()&nbsp;$location.getAddress().getTown()&nbsp;$location.getAddress().getDistrict()<br></span></td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="201" class="tdgreyh" valign="middle">&nbsp;<span class="copy9"><a href="$!location.getUrl1()" target="_blank">$!location.getUrl1()</a><br></span></td>
+          </tr>
+          <tr>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="170" height="1" border="0"></td>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="201" height="1" border="0"></td>
+            <td width="2" class="tdbbleu1"><img src="/mag/img/space.gif" width="2" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="64" height="1" border="0"></td>
+          </tr>
+          <tr>
+            <td width="1" height="4" valign="top"><img src="/mag/img/layout/space_blue_sub.gif" width="1" height="3" border="0"></td>
+            <td class="tdbbleu3" colspan="8"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+          </tr>
+        #end
+        #if( !$bIsLocation )
+          <tr>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+          </tr>
+          <tr>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="16" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="170" class="white"><span class="pinktext"><b>Es wurde keine Location gefunden.</b></span></td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="201" class="tdgreyh" valign="middle">&nbsp;<span class="copy9">&nbsp;</span></td>
+            <td width="2" rowspan="3" background="/mag/img/ornaments/dotted_line_sub_vert.gif" rowspan="3"><img src="/mag/img/space.gif" width="2" height="4" border="0"></td>
+            <td width="64" class="white" rowspan="3" align="center" valign="top"><img src="/mag/img/space.gif" width="2" height="1" border="0"></td>
+          </tr>
+          <tr>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="16" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="170" class="white"><span class="copy9">&nbsp;</span></td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="201" class="tdgreyh" valign="middle">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="16" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="170" class="white"><span class="copy9">&nbsp;</span></td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="201" class="tdgreyh" valign="middle">&nbsp;<span class="copy9">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="170" height="1" border="0"></td>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="201" height="1" border="0"></td>
+            <td width="2" class="tdbbleu1"><img src="/mag/img/space.gif" width="2" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="64" height="1" border="0"></td>
+          </tr>
+          <tr>
+            <td width="1" height="4" valign="top"><img src="/mag/img/layout/space_blue_sub.gif" width="1" height="3" border="0"></td>
+            <td class="tdbbleu3" colspan="8"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+          </tr>
+        #end
+      </table>
+    </td>
+    <td background="/mag/img/layout/contentbox_border_blue_sub.gif" width="10"><img src="/mag/img/space.gif" width="10" height="1" border="0"></td>
+  </tr>
+  <tr height="12">
+    <td colspan="3" height="14" valign="top"><img src="/mag/img/layout/contentbox_bottom_blue_sub.gif" width="468" height="12" border="0"></td>
+  </tr>
+</table>

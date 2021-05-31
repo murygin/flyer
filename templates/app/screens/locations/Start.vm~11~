@@ -1,0 +1,62 @@
+##############################################################################
+## Start.vm is the start template for locations
+## there ist no layout in this template so far
+## only information is displayed
+##
+## $vecLocationKeywords vector of LocationKeywordWrappern
+## $LocationKeywords.getLocation() returns the location
+## $LocationKeywords.getLocation().getAddress() returns the address of the location
+## $LocationKeywords.getTypes() returns the types of the location
+## $LocationKeywords.getStyles() returns the styles of the location
+##
+## Number of clubs: $nNumberOfClubs
+## Number of venues: $nNumberOfVenues
+## Number of cinemas: $nNumberOfCinemas
+## Number of theatres: $nNumberOfTheatres
+## Number of museums, galeries: $nNumberOfMuseums
+## Number of restaurants, pubs, bistro, cafes: $nNumberOfRestaurants
+## Number of shops: $nNumberOfShops
+##############################################################################
+
+$page.setTitle("Flyer Locations")
+$page.setBgColor("#ffffff")
+$page.setStyleSheet("/mag/css/style.css")
+
+$data.setLayoutTemplate("/locations/Index.vm")
+
+#set( $bIsLocation=false )
+#foreach( $LocationKeywords in $vecLocationKeywords )
+	#set( $bIsLocation=true )
+	#set( $location=$LocationKeywords.getLocation() )
+	#set( $vecTypes=$LocationKeywords.getTypes() )
+	#set( $vecStyles=$LocationKeywords.getStyles() )
+	$location.getName()<br>
+	$location.getAddress().getStreet()&nbsp;$!location.getAddress().getNumber()<br>
+	$location.getAddress().getZip()&nbsp;$location.getAddress().getTown()&nbsp;$location.getAddress().getDistrict()<br>
+	$!location.getUrl1()<br>
+	$!location.getAddress().getPubtrans()<br>
+	#set( $bIsFirst=true )
+	#foreach( $type in $vecTypes )
+		#if( !$bIsFirst ),&nbsp;#end
+		#set( $bIsFirst=false )
+		$type.getName()
+	#end
+	<br>
+	#set( $bIsFirst=true )
+	#foreach( $style in $vecStyles )
+		#if( $bIsFirst )Style:&nbsp;#end
+		#if( !$bIsFirst ),&nbsp;#end
+		#set( $bIsFirst=false )
+		$style.getName()
+	#end
+  <hr>
+#end
+
+
+Number of <a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","club")">clubs</a>: $nNumberOfClubs<br>
+Number of <a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","venue")">venues</a>: $nNumberOfVenues<br>
+Number of <a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","cinema")">cinemas</a>: $nNumberOfCinemas<br>
+Number of <a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","theatre")">theatres</a>: $nNumberOfTheatres<br>
+Number of <a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","museum").addQueryData("cmb_style","gallery")">museums, galeries</a>: $nNumberOfMuseums<br>
+Number of <a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","restaurant")">restaurants</a>, pubs, bistro, cafes: $nNumberOfRestaurants<br>
+Number of <a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","shop")">shops: $nNumberOfShops</a><br>

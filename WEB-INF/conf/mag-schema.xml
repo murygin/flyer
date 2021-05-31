@@ -1,0 +1,18 @@
+<!-- ==================================================================== -->
+<!--                                                                      -->
+<!-- T U R B I N E  P R O J E C T  S C H E M A                            -->
+<!--                                                                      -->
+<!-- ==================================================================== -->
+<!-- This is an example Turbine project schema.                           -->
+<!-- ==================================================================== -->
+
+<database>
+  <table name="RDF">
+    <column name="RDF_ID" required="true" autoIncrement="true" primaryKey="true" type="INTEGER"/>
+    <column name="TITLE" size="255" type="VARCHAR"/>
+    <column name="BODY" size="255" type="VARCHAR"/>
+    <column name="URL" size="255" type="VARCHAR"/>
+    <column name="AUTHOR" size="255" type="VARCHAR"/>
+    <column name="DEPT" size="255" type="VARCHAR"/>
+  </table>
+</database>

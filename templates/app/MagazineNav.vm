@@ -1,0 +1,38 @@
+## Magazine Nav
+## @version: $Id: MagazineNav.vm,v 1.2 2001/09/10 13:37:05 heiko Exp $
+
+<!-- MAGAZINE NAV -->
+<script language="javascript">
+<!--
+function go2() {
+    nextIndex = document.forms['magazinNav'].nextURL.options.selectedIndex; 
+    newURL = document.forms['magazinNav'].nextURL.options[nextIndex].value;
+    if(newURL != "") {
+        document.location.href = newURL;
+        //alert("Moving to: " + newURL);
+    }
+}
+//-->
+</script>
+         	<table cellspacing="0" cellpadding="0" border="0">
+			<tr><td>
+			<form name="magazinNav">
+            <select name="nextURL" onchange="go2()" class="input200pink">
+                <option>More Magazine
+                <option value="$link.setPage("magazine,ThemenIndex.vm")">Themen
+                <option value="">-----
+                <option value="$link.setPage("magazine,BesprechungenIndex.vm")">Besprechungen
+                <option value="">-----
+                #foreach($channel in $otherChannel)
+                <option value="$link.setPage("magazine,ChannelDetail.vm").addQueryData("channel_id", $channel.getChannelId())">$channel.getDescription()
+                #end
+                #if($spezialHasContents)
+                <option value="$link.setPage("magazine,SpezialIndex.vm")">Spezial
+                #end
+            </select>
+			</td></tr>
+			</form>
+			</table>
+<!-- END MAGAZINE NAV -->
+
+

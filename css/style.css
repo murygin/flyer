@@ -1,0 +1,397 @@
+/* generelle formate */
+
+body
+	{ 
+		margin: 0px; 
+		background-color: white;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+td
+	{ 
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+		font-size: 10px;
+	}
+	
+br
+	{ 
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+		font-size: 5px;
+	}
+	
+
+/* formate fuer links */
+
+a.magenta:link
+	{ 
+		color: #ff3399;
+		background-color: transparent;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+a.magenta:visited
+	{ 
+		color: #c12673;
+		background-color: transparent;
+		text-decoration: none; 
+		cursor: pointer;
+	}
+
+a.magenta:active
+	{  
+		color: black;
+		background-color: transparent;
+		text-decoration: none; 
+		cursor: pointer;
+	}
+
+a.magenta:hover
+	{ 
+		color: #c12673;
+		background-color: transparent;
+		text-decoration: underline; 
+		cursor: pointer;
+	}
+	
+a.black{font-size : 10px; font-family : Verdana, Arial, Helvetica, sans-serif; color : #000000; text-decoration: none;}
+A.black:link
+	{ 
+		color: black;
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+A.black:visited
+	{ 
+		color: black;
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+A.black:active
+	{  
+		color: black;
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+A.black:hover
+	{ 
+		color: #4d4d4d;
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+
+/* formate fuer schriftgroessen */
+	
+.copy10
+	{  
+		font-size: 10px;
+	}
+	
+.copy11
+	{  
+		font-size: 11px;
+	}
+	
+.copy11white
+	{ 
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+	}
+	
+.copy12
+	{  
+		font-size: 12px;
+	}
+
+.copy13
+	{  
+		font-size: 13px;
+	}
+
+
+
+/* formate fuer mauszeiger */
+
+.cursorcrosshair
+	{
+		cursor:crosshair;
+	}
+	
+.cursorpointer
+	{
+		cursor:pointer;
+	}
+
+.cursortext
+	{
+		cursor:text;
+	}
+	
+.cursorhelp
+	{
+		cursor:help;
+	}
+	
+
+/* formate fuer form-felder */
+.inputns4
+	{
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+
+.inputpink
+	{
+		color: white;
+		background-color: #ff3399;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+.inputwhite
+	{
+		color: black;
+		background-color: white;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+.input50pink
+	{
+		color: white;
+		background-color: #ff3399;
+		width: 50px;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+.input50white
+	{
+		color: black;
+		background-color: white;
+		width: 50px;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+.input100pink
+	{
+		color: white;
+		background-color: #ff3399;
+		width: 100px;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+.input100white
+	{
+		color: black;
+		background-color: white;
+		width: 100px;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+.input175pink
+	{
+		color: white;
+		background-color: #ff3399;
+		width: 175px;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+.input175white
+	{
+		color: black;
+		background-color: white;
+		width: 175px;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+.input200pink
+	{
+		color: white;
+		background-color: #ff3399;
+		width: 200px;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+	
+.input200white
+	{
+		color: black;
+		background-color: white;
+		width: 200px;
+		font-size: 10px;
+		font-weight: bold;
+		font-family: Verdana, Geneva, Arial, Helvetica, Swiss, SunSans-Regular, sans-serif;
+	}
+
+		
+		
+/* formate fuer hintergrund-farben */
+		
+.white
+	{
+		background-color: white;
+	}
+	
+.tdhwhite
+	{
+		background-color: white;
+	}
+
+.tdhpink
+	{
+		background-color: #ff3399;
+	}
+
+.tdhbleu
+	{
+		background-color: #69b0c2;
+	}
+
+.tdpinkh
+	{
+		background-color: #ffdeef;
+	}
+
+.tdpinkd
+	{
+		background-color: #ffc6e7;
+	}
+
+.tdgreyh
+	{
+		background-color: #e5e5e5;
+	}
+
+.tdgreyd
+	{ 
+		background-color: #9e9e9e;
+	}
+
+.tdbgrey1
+	{
+		background-color: #9e9e9e;
+	}
+
+.tdbgrey2
+	{
+		background-color: #c4c4c4;
+	}
+
+.tdbgrey3
+	{
+		background-color: #d9d9d9;
+	}
+
+.tdbgrey4
+	{
+		background-color: #e5e5e5;
+	}
+
+.tdgreenh
+	{
+		background-color: #dbdb94;
+	}
+
+.tdgreend
+	{
+		background-color: #cccc66;
+	}
+
+.tdbpink1
+	{
+		background-color: #ea8fc4;
+	}
+
+.tdbpink2
+	{
+		background-color: #ff319c;
+	}
+
+.tdbpink3
+	{
+		background-color: #c62173;
+	}
+
+.tdbpink4
+	{
+		background-color: #9c185a;
+	}
+.tdbpink5
+	{
+		background-color:#ffc6e7;
+	}
+.tdbpink6
+	{
+		background-color:#ffdeef;
+	}
+
+.tdbbleu1
+	{
+		background-color: #2f6676;
+	}
+
+.tdbbleu2
+	{
+		background-color: #3d89a2;
+	}
+
+.tdbbleu3
+	{
+		background-color: #69b0c2;
+	}
+
+.tdbbleu4
+	{
+		background-color: #d2e7ed;
+	}
+
+.tdbbleu5
+	{
+		background-color: #e0eff3;
+	}
+
+.tdbgreen1
+	{
+		background-color: #656523;
+	}
+
+.tdbgreen2
+	{
+		background-color: #aeae57;
+	}
+
+.tdbgreen3
+	{
+		background-color: #cccc66;
+	}
+
+.tdbgreen4
+	{
+		background-color: #dbdb94;
+	}
+
+.tdbgreen5
+	{
+		background-color: #f0f0c8;
+	}

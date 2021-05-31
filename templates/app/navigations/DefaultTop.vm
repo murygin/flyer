@@ -1,0 +1,5 @@
+$page.setBgColor("#ffffff")
+
+<img src="$content.getURI("images/tdm.jpg")">
+
+<hr>

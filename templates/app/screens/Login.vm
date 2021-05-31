@@ -1,0 +1,27 @@
+#**
+
+@author <a href="mailto:jvanzyl@periapt.com">Jason van Zyl</a>
+@version $Id: Login.vm,v 1.1.1.1 2001/08/06 09:38:13 schmidt Exp $
+
+*#
+
+$page.setTitle("Please Login")
+$page.setBgColor($ui.bgcolor)
+
+<form method="post" action="$link.setAction("LoginUser")">
+  <table>
+    <tr>
+      #formCell ("User" "username" "")
+    </tr>
+    <tr>
+       #formPasswordCell ("Password" "password" "")
+    </tr>
+    <tr>
+      <td>
+        <font face="$ui.sansSerifFonts">
+          <input type="submit" value="Login">
+        </font>
+      </td>
+    </tr>
+  </table>
+</form>

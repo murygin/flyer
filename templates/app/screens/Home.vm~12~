@@ -1,0 +1,581 @@
+## default home template
+## @version: $Id: Home.vm,v 1.9 2001/09/09 20:19:40 schmidt Exp $
+
+#set($edition_name = $data.getSession().getAttribute("activeEdition").getNameLong())
+#set($issue_name = $data.getSession().getAttribute("activeIssue").getName())
+#set($lang_id = $data.getSession().getAttribute("activeIssue").getLangId())
+#if($lang_id.equals("1"))
+	#set($lang = "de")
+#elseif($lang_id.equals("2"))
+	#set($lang = "en")
+#end
+#set($imgType = ".gif")
+#set($underline = "_")
+<html>
+<head>
+	<title>Flyer Home, logged in for $edition_name (Issue $issue_name) </title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="/mag/css/style.css">
+</head>
+<body bgcolor="#ffffff" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" background="/mag/img/backgrounds/bg_content.gif">
+$!data.getMessage()
+<table width="709" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td width="5"><img src="/mag/img/space.gif" width="1" height="5" border="0"></td>
+		<td width="231"><img src="/mag/img/space.gif" width="231" height="5" border="0"></td>
+		<td width="5"><img src="/mag/img/space.gif" width="1" height="5" border="0"></td>
+		<td width="468"><img src="/mag/img/space.gif" width="468" height="5" border="0"></td>
+	</tr>
+	<tr>
+		<td><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+		<td valign="top">
+		<img src="/mag/img/super-header/home_flyer_berlin$underline$lang$imgType" width="231" height="56" border="0"><br>
+		<table border="0" cellpadding="0" cellspacing="0" width="10" height="10">
+			<tr height="64">
+				<td colspan="3" height="64">
+					<table border="0" cellpadding="0" cellspacing="0" width="231" height="64">
+						<tr height="13">
+							<td colspan="3" height="10"><img src="/mag/img/key-visuals/header_oben.gif" width="231" height="10" border="0"></td>
+						</tr>
+						<tr height="20">
+							<td height="20" width="9"><img src="/mag/img/key-visuals/header_links_oben.gif" width="9" height="20" border="0"></td>
+							<td height="20" width="186" class="tdbgreen3"><img src="/mag/img/key-visuals/issue.gif" width="70" height="20" border="0"><img src="/mag/img/key-visuals/ziffer_9.gif" width="12" height="20" border="0"><img src="/mag/img/key-visuals/ziffer_punkt.gif" width="6" height="20" border="0"><img src="/mag/img/key-visuals/ziffer_2.gif" width="12" height="20" border="0"></td>
+							<td width="36" height="20"><img src="/mag/img/key-visuals/header_rechts_oben.gif" width="36" height="20" border="0"></td>
+						</tr>
+						<tr height="4">
+							<td colspan="3" height="4"><img src="/mag/img/key-visuals/header_mitte.gif" width="231" height="4" border="0"></td>
+						</tr>
+						<tr height="10">
+							<td width="9" height="10"><img src="/mag/img/key-visuals/header_links_unten.gif" width="9" height="10" border="0"></td>
+							<td height="10" width="186" class="tdbgreen3"><!-- stadt start --><img src="/mag/img/key-visuals/label_berlin.gif" width="31" height="10" border="0"><!-- stadt end --></td>
+							<td width="36" height="10"><img src="/mag/img/key-visuals/header_rechts_unten.gif" width="36" height="10" border="0"></td>
+						</tr>
+						<tr height="20">
+							<td colspan="3" height="20"><img src="/mag/img/key-visuals/header_unten.gif" width="231" height="20" border="0"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="118">
+				<td height="118" width="12"><img src="/mag/img/key-visuals/left.gif" width="12" height="118" border="0"></td>
+				<td height="118" width="210" class="tdbbleu2"><!-- key-visual start --><img src="/mag/img/key-visuals/visual_9.gif" border="0"><!-- key-visual end --></td>
+				<td height="118" width="9"><img src="/mag/img/key-visuals/right.gif" width="9" height="118" border="0"></td>
+			</tr>
+			<tr height="82">
+				<td colspan="3" height="82"><!-- city-facts start --><img src="/mag/img/key-visuals/cityfacts_berlin.gif" width="231" height="82" border="0"><!-- city-facts end --></td>
+			</tr>
+		</table>
+		<br>
+			<!--<b>Issue</b><br>
+			$data.getSession().getAttribute("activeIssue").getName()-->
+		<table border="0" cellpadding="0" cellspacing="0" width="231">
+			<colgroup>
+			<col width="221">
+				<col width="10">
+					</colgroup>
+					<tr height="21">
+						<td colspan="2" height="21">
+							<table border="0" cellpadding="0" cellspacing="0" width="231" height="30">
+								<colgroup>
+								<col width="18">
+									<col width="188">
+										<col width="25">
+											</colgroup>
+											<tr height="7">
+												<td rowspan="5"><img src="/mag/img/layout/header_left_magenta_big.gif" width="18" height="30" border="0"></td>
+												<td width="188" height="7"><img src="/mag/img/layout/header_top_magenta.gif" width="188" height="7" border="0"></td>
+												<td rowspan="5"><img src="/mag/img/layout/teaserbox_right_magenta.gif" width="25" height="30" border="0"></td>
+											</tr>
+											<tr height="5">
+												<td width="188" height="5" class="tdbpink2"><img src="/mag/img/phrases/15.gif" width="188" height="5" border="0"></td>
+											</tr>
+											<tr height="4">
+												<td width="188" height="4" class="tdbpink2"><img src="/mag/img/space.gif" width="188" height="4" border="0"></td>
+											</tr>
+											<tr height="10">
+												<td width="188" height="10" class="tdbpink2"><img src="/mag/img/headlines/toolbox$underline$lang$imgType" width="188" height="10" border="0"></td>
+											</tr>
+											<tr height="4">
+												<td width="188" height="4"><img src="/mag/img/layout/header_bottom_magenta.gif" width="188" height="4" border="0"></td>
+											</tr>
+							</table>
+						</td>
+					</tr>
+					<tr height="1">
+						<td colspan="2" height="1"><img src="/mag/img/layout/teaserbox_spacer_magenta.gif" width="231" height="1" border="0"></td>
+					</tr>
+					<tr>
+						<td width="221"><!-- banner start --><img src="/mag/img/banner/toolbox.gif" width="221" height="49" border="0"><!-- banner end --><!-- table start -->
+							<table border="0" cellpadding="0" cellspacing="0" width="221">
+								<colgroup>
+								<col width="1">
+									<col width="1">
+										<col width="4">
+											<col width="214">
+												<col width="1">
+													</colgroup>
+													<tr>
+														<td width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+														<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+														<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+														<td width="214" class="tdbpink4"><img src="/mag/img/space.gif" width="214" height="1" border="0"></td>
+														<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+													</tr>
+													<tr>
+														<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+														<td width="1" class="white" colspan="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+													</tr>
+													<tr>
+														<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+														<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+														<td width="4" class="tdpinkh"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+														<td class="tdpinkh" width="215">Plane mit dem CITY SELECTOR dein Wochenende in Köln (NRW), Dresden (Sachsen), New York, Tokio...</td>
+														<td width="4" class="tdbpink1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+
+													<tr>
+														<td width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+														<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+														<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+														<td width="214" class="tdbpink4"><img src="/mag/img/space.gif" width="214" height="1" border="0"></td>
+														<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+													</tr>
+							</table>
+							<!-- table end --></td>
+						<td width="10" background="/mag/img/layout/border_pink.gif"><img src="/mag/img/space.gif" width="10" height="1" border="0"></td>
+					</tr>
+					<tr height="12">
+						<td colspan="2" height="12"><img src="/mag/img/layout/teaserbox_bottom_magenta3.gif" width="231" height="12" border="0"></td>
+					</tr>
+		</table>
+		<br>
+		<img src="/mag/img/banner/ueberuns_de.gif" width="231" height="80" border="0">
+		</td>
+		<td><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+		<td>
+		<table border="0" cellpadding="0" cellspacing="0" width="468">
+			<tr height="1">
+				<td height="1" colspan="6">
+					<table border="0" cellpadding="0" cellspacing="0" width="468" height="31">
+						<tr height="7">
+							<td rowspan="5"><img src="/mag/img/layout/header_left_blue_big.gif" width="18" height="30" border="0"></td>
+							<td width="425" height="7"><img src="/mag/img/layout/header_top_blue.gif" width="425" height="7" border="0"></td>
+							<td rowspan="5"><img src="/mag/img/layout/header_right_blue_big.gif" width="25" height="30" border="0"></td>
+						</tr>
+						<tr height="5">
+							<td width="425" height="5" bgcolor="#69b0c2"><img src="/mag/img/phrases/4.gif" width="188" height="5" border="0"></td>
+						</tr>
+						<tr height="4">
+							<td width="425" height="4" bgcolor="#69b0c2"><img src="/mag/img/space.gif" width="188" height="4" border="0"></td>
+						</tr>
+						<tr height="10">
+							<td width="425" height="10" bgcolor="#69b0c2"><a href="$link.setPage("magazine,MagazineIndex.vm")"><img src="/mag/img/headlines/inmagazin$underline$lang$imgType" width="188" height="10" border="0"></a></td>
+						</tr>
+						<tr height="4">
+							<td width="425" height="4"><img src="/mag/img/layout/header_bottom_blue.gif" width="425" height="4" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td height="1" colspan="3"><img src="/mag/img/space.gif" width="468" height="1" border="0"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="1">
+				<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="5" class="tdbgreen1"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+				<td height="1" width="459" class="tdbgreen1"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr height="1">
+				<td width="1" height="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="5" class="tdbgreen5"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+				<td height="1" width="459" class="tdbgreen5"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr height="5">
+				<td width="1" rowspan="6" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="1" rowspan="6" class="tdbgreen5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="5" height="5" class="tdbgreen4"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+				<td width="459" height="5" class="tdbgreen4"><img src="/mag/img/space.gif" width="459" height="5" border="0"></td>
+				<td width="1" rowspan="6" class="tdbgreen3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="1" rowspan="6" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td width="5" class="tdbgreen4" rowspan="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="459" class="tdbgreen4" align="center">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr height="10">
+							<td colspan="2" height="10"><img src="/mag/img/thumbnails/header_themen_de.gif" width="86" height="10" border="0"></td>
+							<td rowspan="2" width="5"><img src="/mag/img/space.gif" width="5" height="10" border="0"></td>
+							<td colspan="2" height="10"><img src="/mag/img/thumbnails/header_besprechungen_de.gif" width="86" height="10" border="0"></td>
+							<td rowspan="2" width="5"><img src="/mag/img/space.gif" width="5" height="10" border="0"></td>
+							#foreach($channel in $usedMagazineChannel)
+								#set($channelName = $channel.getName())
+							<td colspan="2" height="10"><img src="/mag/img/thumbnails/header$underline$channelName$underline$lang$imgType" width="86" height="10" border="0"></td>
+							<td rowspan="2" width="5"><img src="/mag/img/space.gif" width="5" height="10" border="0"></td>
+							#end
+							<td colspan="2" height="10"><img src="/mag/img/thumbnails/header_spezial_de.gif" width="86" height="10" border="0"></td>
+						</tr>
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("magazine,ThemenIndex.vm")" class="black"><img src="/mag/img/thumbnails/thumb_themen.gif" width="78" height="48" border="1"></a></td>
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("magazine,BesprechungenIndex.vm")" class="black"><img src="/mag/img/thumbnails/thumb_besprechungen.gif" width="78" height="48" border="1"></a></td>
+							#foreach($channel in $usedMagazineChannel)
+							#set($channelName = $channel.getName())
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("magazine,ChannelDetail.vm").addQueryData("channel_id", $channel.getChannelId())" class="black"><img src="/mag/img/thumbnails/thumb$underline$channelName$imgType" width="78" height="48" border="1"></a></td>
+							#end
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("magazine,SpezialIndex.vm")" class="black"><img src="/mag/img/thumbnails/thumb_spezial.gif" width="78" height="48" border="1"></a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="10">
+				<td height="10" width="459" class="tdbgreen4"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+			</tr>
+			<tr height="2">
+				<td height="2" width="459" class="tdbgreen4"><img src="/mag/img/ornaments/dotted_line_green_466_px.gif" width="452" height="2" border="0"></td>
+			</tr>
+			<tr height="10">
+				<td height="10" width="459" class="tdbgreen4"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+			</tr>
+			<tr>
+				<td width="459" class="tdbgreen4" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="459">
+						<tr height="1">
+							<td width="449" height="1" class="tdbgreen4" valign="top"><img src="/mag/img/ornaments/icn_dot_green_magenta.gif" width="9" height="9" border="0">
+                                                            #if($magazineOpener)
+                                                            #set($magazineArticle = $magazineOpener.getArticle())
+                                                            <a href="$link.setPage("magazine,ChannelDetail.vm").addQueryData("article_id",$magazineArticle.getArticleId()).addQueryData("channel_id", $magazineOpener.getChannelId())" class="magenta">
+                                                                <b>$magazineArticle.getHeading()</b>
+                                                            </a>
+                                                            <br>
+                                                            $magazineArticle.getSubheading()<br>
+                                                            #end
+							</td>
+							<td width="10" height="1" class="tdbgreen4"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="40">
+				<td height="40" colspan="6"><img src="/mag/img/buttons/triangle_magenta_single.gif" width="468" height="43" border="0" usemap="#triangle_map"></td>
+			</tr>
+		</table>
+		<map name="triangle_map"><area shape="polygon" coords="432,43,456,43,467,33,467,8,457,7,431,34" href="$link.setPage("magazine,ChannelDetail.vm").addQueryData("article_id",$magazineArticle.getArticleId()).addQueryData("channel_id", $magazineOpener.getChannelId())"></map>
+		<br><br>
+		<table border="0" cellpadding="0" cellspacing="0" width="468">
+			<tr height="1">
+				<td height="1" colspan="6">
+					<table border="0" cellpadding="0" cellspacing="0" width="468" height="31">
+						<tr height="7">
+							<td rowspan="5"><img src="/mag/img/layout/header_left_blue_big.gif" width="18" height="30" border="0"></td>
+							<td width="425" height="7"><img src="/mag/img/layout/header_top_blue.gif" width="425" height="7" border="0"></td>
+							<td rowspan="5"><img src="/mag/img/layout/header_right_blue_big.gif" width="25" height="30" border="0"></td>
+						</tr>
+						<tr height="5">
+							<td width="425" height="5" bgcolor="#69b0c2"><img src="/mag/img/phrases/5.gif" width="188" height="5" border="0"></td>
+						</tr>
+						<tr height="4">
+							<td width="425" height="4" bgcolor="#69b0c2"><img src="/mag/img/space.gif" width="188" height="4" border="0"></td>
+						</tr>
+						<tr height="10">
+							<td width="425" height="10" bgcolor="#69b0c2"><a href="$link.setPage("events,EventIndex.vm")"><img src="/mag/img/headlines/inevents$underline$lang$imgType" width="188" height="10" border="0"></a></td>
+						</tr>
+						<tr height="4">
+							<td width="425" height="4"><img src="/mag/img/layout/header_bottom_blue.gif" width="425" height="4" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td height="1" colspan="3"><img src="/mag/img/space.gif" width="468" height="1" border="0"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="1">
+				<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="5" class="tdbgreen1"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+				<td height="1" width="459" class="tdbgreen1"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr height="1">
+				<td width="1" height="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="5" class="tdbgreen5"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+				<td height="1" width="459" class="tdbgreen5"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr height="5">
+				<td width="1" rowspan="6" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="1" rowspan="6" class="tdbgreen5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="5" height="5" class="tdbgreen4"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+				<td width="459" height="5" class="tdbgreen4"><img src="/mag/img/space.gif" width="459" height="5" border="0"></td>
+				<td width="1" rowspan="6" class="tdbgreen3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="1" rowspan="6" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td width="5" class="tdbgreen4" rowspan="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="459" class="tdbgreen4" align="center">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr height="10">
+							<td colspan="2" height="10"><img src="/mag/img/thumbnails/header_nachtleben$underline$lang$imgType" width="86" height="10" border="0"></td>
+							<td rowspan="2" width="5"><img src="/mag/img/space.gif" width="5" height="10" border="0"></td>
+							<td colspan="2" height="10"><img src="/mag/img/thumbnails/header_konzerte$underline$lang$imgType" width="86" height="10" border="0"></td>
+							<td rowspan="2" width="5"><img src="/mag/img/space.gif" width="5" height="10" border="0"></td>
+							<td colspan="2" height="10"><img src="/mag/img/thumbnails/header_ausstellungen$underline$lang$imgType" width="86" height="10" border="0"></td>
+							<td rowspan="2" width="5"><img src="/mag/img/space.gif" width="5" height="10" border="0"></td>
+							<td colspan="2" height="10"><img src="/mag/img/thumbnails/header_theater$underline$lang$imgType" width="86" height="10" border="0"></td>
+							<td rowspan="2" width="5"><img src="/mag/img/space.gif" width="5" height="10" border="0"></td>
+							<td colspan="2" height="10"><img src="/mag/img/thumbnails/header_andere$underline$lang$imgType" width="86" height="10" border="0"></td>
+						</tr>
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","nightlife")" class="black"><img src="/mag/img/thumbnails/thumb_nachtleben.gif" width="78" height="48" border="1"></a></td>
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","concerts")" class="black"><img src="/mag/img/thumbnails/thumb_konzerte.gif" width="78" height="48" border="1"></a></td>
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","arts")" class="black"><img src="/mag/img/thumbnails/thumb_ausstellungen.gif" width="78" height="48" border="1"></a></td>
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","stage")" class="black"><img src="/mag/img/thumbnails/thumb_theater.gif" width="78" height="48" border="1"></a></td>
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","misc")" class="black"><img src="/mag/img/thumbnails/thumb_andere.gif" width="78" height="48" border="1"></a></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="10">
+				<td height="10" width="459" class="tdbgreen4"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+			</tr>
+			<tr height="2">
+				<td height="2" width="459" class="tdbgreen4"><img src="/mag/img/ornaments/dotted_line_green_466_px.gif" width="452" height="2" border="0"></td>
+			</tr>
+			<tr height="10">
+				<td height="10" width="459" class="tdbgreen4"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+			</tr>
+			<tr>
+				<td width="459" class="tdbgreen4" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="459">
+						<tr height="1">
+							<td width="449" height="1" class="tdbgreen4" valign="top"><img src="/mag/img/ornaments/icn_dot_green_magenta.gif" width="9" height="9" border="0">
+                                                            #if($eventOpener)
+                												#set($eventArticle = $eventOpener.getArticle())
+																<a href="$link.setPage("magazine,ChannelDetail.vm").addQueryData("article_id",$eventArticle.getArticleId()).addQueryData("channel_id", $eventOpener.getChannelId())" class="magenta"><b>$eventArticle.getHeading()</b></a><br>$eventArticle.getSubheading()
+                                                            #end
+							</td>
+							<td width="10" height="1" class="tdbgreen4"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="40">
+				<td height="40" colspan="6"><img src="/mag/img/buttons/triangle_magenta_single.gif" width="468" height="43" border="0" usemap="#triangle_map2"></td>
+			</tr>
+		</table>
+		<map name="triangle_map2"><area shape="polygon" coords="432,43,456,43,467,33,467,8,457,7,431,34" href="$link.setPage("magazine,ChannelDetail.vm").addQueryData("article_id",$eventArticle.getArticleId()).addQueryData("channel_id", $eventOpener.getChannelId())"></map>
+		<br><br>
+		<!--<a href="$link.setPage("magazine,ThemenIndex.vm")">Themen</a>,
+			<a href="$link.setPage("magazine,BesprechungenIndex.vm")">Besprechungen</a>,
+			#foreach($channel in $usedMagazineChannel)
+				<a href="$link.setPage("magazine,ChannelDetail.vm").addQueryData("channel_id", $channel.getChannelId())">$channel.getDescription()</a>,
+			#end
+            <a href="$link.setPage("magazine,SpezialIndex.vm")">Spezial</a>-->
+		<!--#if($eventOpener)
+                #set($eventArticle = $eventOpener.getArticle())
+                <b>Events</b><br>
+                <a href="$link.setPage("magazine,ChannelDetail.vm").addQueryData("article_id",$eventArticle.getArticleId()).addQueryData("channel_id", $eventOpener.getChannelId())" class="magenta">$eventArticle.getHeading()</a><br>$eventArticle.getSubheading()
+                #end-->
+		<table border="0" cellpadding="0" cellspacing="0" width="468">
+			<tr>
+				<td colspan="9">
+					<table border="0" cellpadding="0" cellspacing="0" width="468" height="31">
+						<tr height="7">
+							<td rowspan="5"><img src="/mag/img/layout/header_left_blue_big.gif" width="18" height="30" border="0"></td>
+							<td width="425" height="7"><img src="/mag/img/layout/header_top_blue.gif" width="425" height="7" border="0"></td>
+							<td rowspan="5"><img src="/mag/img/layout/header_right_blue_big.gif" width="25" height="30" border="0"></td>
+						</tr>
+						<tr height="5">
+							<td width="425" height="5" bgcolor="#69b0c2"><img src="/mag/img/phrases/7.gif" width="188" height="5" border="0"></td>
+						</tr>
+						<tr height="4">
+							<td width="425" height="4" bgcolor="#69b0c2"><img src="/mag/img/space.gif" width="188" height="4" border="0"></td>
+						</tr>
+						<tr height="10">
+							<td width="425" height="10" bgcolor="#69b0c2"><a href="$link.setPage("locations,LocationIndex.vm")"><img src="/mag/img/headlines/locations$underline$lang$imgType" width="188" height="10" border="0"></a></td>
+						</tr>
+						<tr height="4">
+							<td width="425" height="4"><img src="/mag/img/layout/header_bottom_blue.gif" width="425" height="4" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td height="1" colspan="3"><img src="/mag/img/space.gif" width="468" height="1" border="0"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr height="5">
+				<td width="7" height="5"><img src="/mag/img/space.gif" width="7" height="10" border="0"></td>
+				<td height="5" width="86"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+				<td width="5" height="5"><img src="/mag/img/space.gif" width="5" height="10" border="0"></td>
+				<td height="5" width="130"><img src="/mag/img/space.gif" width="130" height="10" border="0"></td>
+				<td width="16" height="5"><img src="/mag/img/space.gif" width="16" height="10" border="0"></td>
+				<td width="86" height="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="5" height="5"><img src="/mag/img/space.gif" width="5" height="10" border="0"></td>
+				<td height="5" width="130"><img src="/mag/img/space.gif" width="130" height="10" border="0"></td>
+				<td height="5" width="4"><img src="/mag/img/space.gif" width="4" height="10" border="0"></td>
+			</tr>
+			<tr>
+				<td width="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="86">
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","clubs")" class="black"><img src="/mag/img/thumbnails/thumb_clubsundbars.gif" width="78" height="48" border="1"></a ></td>
+						</tr>
+					</table>
+				</td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td valign="top" width="130"><b>Clubs & Bars:</b><br>Clubs, Discos, Kneipen, Bars, Cafés
+				</td>
+				<td width="16"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="86">
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","stage")" class="black"><img src="/mag/img/thumbnails/thumb_buehnen.gif" width="78" height="48" border="1"></a ></td>
+						</tr>
+					</table>
+				</td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td valign="top" width="130"><b>B&uuml;hnen:</b><br>Theater, Balls&auml;ale, Bretterbuden
+				</td>
+				<td width="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td width="7"><img src="/mag/img/space.gif" width="7" height="10" border="0"></td>
+				<td width="86"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="16"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td width="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="86">
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","venues")" class="black"><img src="/mag/img/thumbnails/thumb_veranstaltungsorte.gif" width="78" height="48" border="1"></a ></td>
+						</tr>
+					</table>
+				</td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130" valign="top"><b>Veranstaltungsorte:</b><br>Konzerthallen und andere "Mehrzweck"- Locations
+				</td>
+				<td width="16"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="86">
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","arts")" class="black"><img src="/mag/img/thumbnails/thumb_art.gif" width="78" height="48" border="1"></a ></td>
+						</tr>
+					</table>
+				</td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130" valign="top"><b>Galerien & Museen:</b><br>Alles, wo Kunst drin ist oder drin sein m&ouml;chte
+				</td>
+				<td width="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td width="7"><img src="/mag/img/space.gif" width="7" height="10" border="0"></td>
+				<td width="86"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="16"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td width="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="86">
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","cinemas")" class="black"><img src="/mag/img/thumbnails/thumb_kinos.gif" width="78" height="48" border="1"></a ></td>
+						</tr>
+					</table>
+				</td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130" valign="top"><b>Kinos:</b><br>Lichtspielh&auml;user, Filmpal&auml;ste und Hinterhof-Kinos
+				</td>
+				<td width="16"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="86">
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","food")" class="black"><img src="/mag/img/thumbnails/thumb_essenundtrinken.gif" width="78" height="48" border="1"></a ></td>
+						</tr>
+					</table>
+				</td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130" valign="top"><b>Essen & Trinken:</b><br>…mit Ablenkungs-Programm
+				</td>
+				<td width="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td width="7"><img src="/mag/img/space.gif" width="7" height="10" border="0"></td>
+				<td width="86"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="16"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td width="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="86">
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="50" width="80"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+					</table>
+				</td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130" valign="top"><img src="/mag/img/space.gif" width="1" height="1" border="0"><br>
+					<br>
+					<br>
+				</td>
+				<td width="16"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="86" valign="top">
+					<table border="0" cellpadding="0" cellspacing="0" width="86">
+						<tr height="50">
+							<td height="50" width="6"><img src="/mag/img/thumbnails/sidebar.gif" width="6" height="50" border="0"></td>
+							<td height="50" width="80"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","shopping_cat")" class="black"><img src="/mag/img/thumbnails/thumb_shopping.gif" width="78" height="48" border="1"></a ></td>
+						</tr>
+					</table>
+				</td>
+				<td width="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				<td width="130" valign="top"><b>Shopping:</b><br>Konsumrausch, ungeschminkt
+				</td>
+				<td width="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+			</tr>
+		</table>
+		<br>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

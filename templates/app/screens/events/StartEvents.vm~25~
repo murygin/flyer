@@ -1,0 +1,72 @@
+###############################################################################
+## StartEvents.vm displays 5 or 3 events of some event types for one date
+## the date must by set by url param urlDate (yyyy-mm-dd)
+##
+## @param urlDate the date of the events
+##
+## data to display:
+## $vecFlyerPresents
+## $vecNightlife, a vector of 5 nightlife events
+## $vecConcert, a vector of 3 consert events
+## $vecTheatre, a vector of 3 theatre events
+## $vecExcibition, a vector of 3 excibition events
+## $vecDifferent. a vector of 3 events which are not nightlife, concert, excibition and theatre
+##
+## alle vectoren bestehen aus obj.fork.flyer.mag.om.EventKeywordWrapper
+## $wrapper.getEvent().getName() returns the name of the event
+## $wrapper.getEvent().getBegin().toGMTString().substring( 12, 16 ) retruns the start time (hh:mm)
+## $wrapper.getTypes() returns the types
+## $wrapper.getStyles() returns the styles
+## $wrapper.getLocation().getName() returns the name of location
+## $wrapper.getLocation().getAddress() retruns the address of the location
+###############################################################################
+
+$page.setTitle("Flyer Locations")
+$page.setBgColor("#ffffff")
+$page.setStyleSheet("/mag/css/style.css")
+
+$data.setLayoutTemplate("/events/Index.vm")
+
+<a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_style","nightlife")">nighlife:</a><br>
+#foreach( $wrapper in $vecNightlife )
+  $wrapper.getLocation().getName()&nbsp;
+  $wrapper.getLocation().getAddress().getStreet()&nbsp;
+  $!wrapper.getLocation().getAddress().getNumber()&nbsp;
+  $wrapper.getLocation().getAddress().getZip()&nbsp;
+  $wrapper.getLocation().getAddress().getDistrict()
+  $wrapper.getEvent().getBegin().toGMTString().substring( 12, 17 )h<br>
+  $wrapper.getEvent().getName()&nbsp;
+  #foreach( $type in $wrapper.getTypes() )
+    $type.getName()&nbsp;
+  #end
+  #foreach( $style in $wrapper.getStyles() )
+    $style.getName()&nbsp;
+  #end
+  <br><br>
+#end
+<br>
+<a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_style","concert")">concerts:</a><br>
+#foreach( $wrapper in $vecConcert )
+  $wrapper.getLocation().getName()&nbsp;
+  ##uhrzeit (hh:mm)
+  $wrapper.getEvent().getBegin().toGMTString().substring( 12, 17 )h&nbsp;
+  $wrapper.getEvent().getName()<br><br>
+#end
+<a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_style","theatre")">theatre:</a><br>
+#foreach( $wrapper in $vecTheatre )
+  $wrapper.getLocation().getName()&nbsp;
+  $wrapper.getEvent().getBegin().toGMTString().substring( 12, 17 )h&nbsp;
+  $wrapper.getEvent().getName()<br><br>
+#end
+<a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_style","excibition")">excibition:</a><br>
+#foreach( $wrapper in $vecExcibition )
+  $wrapper.getLocation().getName()&nbsp;
+  $wrapper.getEvent().getBegin().toGMTString().substring( 12, 17 )h&nbsp;
+  $wrapper.getEvent().getName()<br><br>
+#end
+different:<br>
+#foreach( $wrapper in $vecDifferent )
+  $wrapper.getLocation().getName()&nbsp;
+  $wrapper.getEvent().getBegin().toGMTString().substring( 12, 17 )h&nbsp;
+  $wrapper.getEvent().getName()<br><br>
+#end

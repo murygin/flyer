@@ -1,0 +1,28 @@
+$page.setTitle("Insert")
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<form method="post" action="$link.setPage("Index.vm").setAction("SQL")">
+  <div align="left">
+    <table bgcolor="#ffffff" cellpadding="5">
+      <tr>
+        #formCell ("Title" "title" "")
+      </tr>
+      <tr>
+        #formCell ("Author" "author" "")
+      </tr>
+      <tr>
+        #formCell ("Department" "dept" "")
+      </tr>
+      <tr>
+        #formCell ("Url" "url" "")
+      </tr>
+      <tr>
+        #formCell ("Body" "body" "")
+      </tr>
+    </table>
+    <input type="submit" name="eventSubmit_doInsert" value="Insert"/>
+  </div>
+</form>

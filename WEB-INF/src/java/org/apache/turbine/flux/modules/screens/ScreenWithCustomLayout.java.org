@@ -1,0 +1,50 @@
+package org.whatever.app;
+
+import org.apache.velocity.context.Context;
+
+import org.apache.turbine.modules.screens.VelocityScreen;
+import org.apache.turbine.services.resources.TurbineResources;
+import org.apache.turbine.services.velocity.TurbineVelocity;
+import org.apache.turbine.util.RunData;
+import org.apache.turbine.util.security.AccessControlList;
+
+/**
+ * Base screen for secure web acces to the storage side of Tambora.
+ *
+ * @author <a href="mailto:jvanzyl@apache.org">Jason van Zyl</a>
+ */
+public class ScreenWithCustomLayout extends VelocityScreen
+{
+    public static final String ROLE_LAYOUT = "role_layout";
+
+    /**
+     * Overide this to add information to the context.
+     *
+     * @param data Turbine information.
+     * @param context Context for web pages.
+     * @exception Exception, a generic exception.
+     */
+    protected void doBuildTemplate( RunData data, Context context )
+        throws Exception
+    {
+    }
+
+    /**
+     * Set the layout according to the role the
+     * user has.
+     */
+    protected void doBuildTemplate( RunData data ) throws Exception
+    {
+        data.setTemplateLayout(data.getUser().getTemp(ROLE_LAYOUT));
+    }
+}
+
+
+
+
+
+
+
+
+
+

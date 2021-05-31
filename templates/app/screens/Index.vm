@@ -1,0 +1,31 @@
+$page.setTitle("Index")
+$page.setBgColor("#ffffff")
+
+#set ( $headings = ["Title", "Dept", "Author", "Url","Body"," "] )
+
+#if ($entries)
+<table>
+  <tr>
+    <td>
+      <table cellspacing="1" cellpadding="1">
+        <tr>
+          #foreach ($heading in $headings)
+          #headerCell ($heading)
+          #end    
+        </tr>
+  
+        #foreach ($entry in $entries)
+        <tr>
+          #entryCell ($entry.Title)
+          #entryCell ($entry.Dept)
+          #entryCell ($entry.Author)
+          #entryCell ($entry.Url)
+          #entryCell ($entry.Body)
+          <td><a href="$link.setPage("Form.vm").addPathInfo("rdfid", $entry.RdfId)">Edit</a></td>
+        </tr>        
+        #end
+      </table>
+    </td>
+  </tr>
+</table>
+#end

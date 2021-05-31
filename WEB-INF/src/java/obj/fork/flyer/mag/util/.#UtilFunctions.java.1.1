@@ -1,0 +1,150 @@
+package obj.fork.flyer.mag.util;
+
+// jdk
+import java.util.Vector;
+
+// turbine
+import org.apache.turbine.modules.screens.VelocityScreen;
+import org.apache.turbine.util.RunData;
+import org.apache.turbine.util.db.Criteria;
+import org.apache.velocity.context.Context;
+import org.apache.turbine.util.Log;
+
+import org.apache.turbine.services.TurbineServices;
+import org.apache.turbine.services.cache.*;
+import org.apache.turbine.om.NumberKey;
+
+// mag
+import obj.fork.flyer.mag.NoItemAvailableException;
+import obj.fork.flyer.mag.modules.screens.magazine.MagazineConstants;
+
+// laika
+import obj.fork.laika.om.*;
+import obj.fork.laika.util.Selectable;
+
+
+/*
+ * util collections
+ */
+public class UtilFunctions
+{
+
+    /*
+     * getAvailableChannel
+     * a channel is available when
+     * it has article behind it
+     *
+     * @param issue, the active issue
+     * @param edition, the choosen edition
+     * @param channel_ids, potential channel
+     * @returns a vector with om.channel objects
+     */
+    public static Vector getUsedChannel(
+        Issue issue,
+        Edition edition,
+        int[] channel_ids
+        )
+        throws Exception
+    {
+        String issue_id = issue.getIssueId().toString();
+        Vector availableChannel = new Vector();
+
+        // match potential channel against channel bound to edition
+        Criteria edCrit = new Criteria();
+        edCrit.addJoin(EditionPeer.EDITION_ID, EditionChannelPeer.EDITION_ID);
+        edCrit.addJoin(EditionChannelPeer.CHANNEL_ID, ChannelPeer.CHANNEL_ID);
+        edCrit.addJoin(ChannelPeer.CHANNEL_ID, ChannelMediaPeer.CHANNEL_ID);
+        edCrit.add(ChannelMediaPeer.MEDIA_ID, "1");
+        edCrit.add(EditionPeer.EDITION_ID, "666");
+        edCrit.or(EditionPeer.EDITION_ID, edition.getEditionId());
+        edCrit.setDistinct();
+        Vector channelForEdition = EditionChannelPeer.doSelect(edCrit);
+
+        Vector channelWithRelation = new Vector();
+
+        for(int i=0; i<channelForEdition.size(); i++)
+        {
+            int currentId = Integer.parseInt(
+                ((EditionChannel)channelForEdition.elementAt(i)).getChannelId().toString()
+                );
+
+            for(int c=0; c<channel_ids.length; c++)
+            {
+                if(channel_ids[c] == currentId)
+                {
+                    channelWithRelation.add(
+                        String.valueOf(currentId)
+                        );
+
+                    break;
+                }
+            }
+        }
+
+        Criteria crit;
+        for(int i=0; i<channelWithRelation.size(); i++)
+        {
+            crit = new Criteria();
+            crit.addJoin(ArticlePeer.ARTICLE_ID, ArticleChannelPeer.ARTICLE_ID);
+            crit.addJoin(ArticlePeer.FLOW_ID, ArticleflowPeer.FLOW_ID);
+            crit.add(ArticlePeer.ISSUE_ID, issue.getIssueId());
+            crit.add(ArticleflowPeer.STATUS_ID, MagazineConstants.APPROVED);
+
+            crit.add(
+                ArticleChannelPeer.CHANNEL_ID,
+                channelWithRelation.elementAt(i)
+                );
+
+            crit.setLimit(1);
+
+            Vector result = ArticlePeer.doSelect(crit);
+
+            if(result.size() > 0)
+            {
+                availableChannel.add(
+                    ChannelPeer.retrieveByPK(
+                        new NumberKey(
+                            (String)channelWithRelation.elementAt(i)
+                            ),
+                        new NumberKey( issue.getLangId().toString() )
+                        )
+                    );
+            }
+        }
+
+        if(availableChannel.size() > 0)
+        {
+            return availableChannel;
+        }
+        else
+        {
+            throw new NoItemAvailableException(
+                "The requested channel group "
+                + channel_ids.toString()
+                + " doesnt hold _ANY_ Article!"
+                );
+        }
+    }
+
+    /*
+     * returns a random index between 0 and size
+     */
+    public static int randomElement(int size)
+    {
+        int max = size-1;
+
+        long randomIndex = Math.round(
+            max * Math.random()
+            );
+
+        if(randomIndex >= 0)
+        {
+            return new Long(randomIndex).intValue();
+        }
+        else
+        {
+            return max;
+        }
+    }
+
+}

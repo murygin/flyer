@@ -1,0 +1,220 @@
+##############################################################################
+## Selectform.vm ist the navigation form for the events
+## form values are submitted to ShowEvents.vm
+## after submitting values are set in ther form again
+##
+## $sSelectedType selected type
+## $sSelectedStyle selected style
+## $sKeyword value of the textfield txtKeyword
+## $sSelectedDate selected date
+##
+## values for the selectboxes are set in vectors
+##
+## $vecCharacter vector of all keywords (types and styles)
+## $vecDates vector of the date text and values
+##############################################################################
+<script language="javascript">
+	/**
+	* sets the character and submits the form
+	*
+	* @param sChar the first character of te location
+	*/
+	function setCharacter( sChar ) {
+		document.forms["fmSelect"].txtChar.value=sChar;
+		document.forms["fmSelect"].submit();
+	}
+</script>
+<td valign="bottom">
+<form name="fmSelect" action="/mag/servlet/mag/template/events%2CShowEvents.vm" method="get">
+<input name="txtChar" type="hidden" value="-1">
+  <table border="0" cellpadding="0" cellspacing="0" width="231">
+    <tr height="1">
+      <td height="1" colspan="6"><!-- nav table header gfx start --><img src="/mag/img/super-header/events_events_${sLangId}.gif" width="231" height="56" border="0"><!-- nav table header gfx end --></td>
+    </tr>
+    <tr height="1">
+      <td height="1" colspan="6"><img src="/mag/img/space.gif" width="231" height="1" border="0"></td>
+    </tr>
+    <tr height="1">
+      <td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="5" bgcolor="#666633"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+      <td height="1" width="222" bgcolor="#666633"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+    </tr>
+    <tr height="1">
+      <td width="1" height="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#dede94"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="5" bgcolor="#dede94"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+      <td height="1" width="222" bgcolor="#dede94"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#dede94"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+    </tr>
+    <tr height="5">
+      <td width="1" bgcolor="#666633" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td width="1" bgcolor="#dede94" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td width="5" bgcolor="#cccc66" rowspan="3"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+      <td width="222" bgcolor="#cccc66" height="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+      <td width="1" bgcolor="#adad5a" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td width="1" bgcolor="#666633" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+    </tr>
+    <tr>
+      <td width="222" bgcolor="#cccc66" class="inputns4"><img src="/mag/img/headlines/1_datum_${sLangId}.gif" width="175" height="7" border="0"><br>
+<select name="cmbDate" size="1" class="input200pink">
+#foreach( $date in $vecDates )
+<option value="$date.getValue()"#if( $sSelectedDate.equals("$date.getValue()") )selected#end>$date.getText()</option>
+#end
+<option value="-1"></option>
+<option value="-1"#if( $sSelectedDate.equals("-1") ) selected#end>die nächsten 2 Wochen</option>
+		</select>
+      </td>
+    </tr>
+    <tr height="10">
+      <td height="10" width="222" bgcolor="#cccc66"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+    </tr>
+    <tr height="1">
+      <td width="1" height="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#adad5a"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="5" bgcolor="#adad5a"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+      <td height="1" width="222" bgcolor="#adad5a"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#666600"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+    </tr>
+    <tr height="1">
+      <td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="5" bgcolor="#666633"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+      <td height="1" width="222" bgcolor="#666633"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+      <td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      <td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+    </tr>
+  </table>
+  <!-- nav table links end -->
+</td>
+<td valign="top"></td>
+<td valign="bottom"><!-- nav table rechts start -->
+  <table border="0" cellpadding="0" cellspacing="0" width="468">
+      <tr height="1">
+        <td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td height="1" width="2" class="tdbgreen1"><img src="/mag/img/space.gif" width="2" height="1" border="0"></td>
+        <td height="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="462" height="1" border="0"></td>
+        <td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      </tr>
+      <tr height="1">
+        <td width="1" height="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td height="1" width="1" class="white" colspan="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      </tr>
+      <tr height="5">
+        <td width="1" class="tdbgreen1" rowspan="3"><img src="/mag/img/space.gif" width="1" height="97" border="0"></td>
+        <td width="1" class="white" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td width="2" class="tdbgreen4" rowspan="3"><img src="/mag/img/space.gif" width="2" height="1" border="0"></td>
+        <td width="175" class="tdbgreen4" height="5"><img src="/mag/img/space.gif" width="1" height="5" border="0"></td>
+        <td width="1" class="tdbgreen2" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td width="1" class="tdbgreen1" rowspan="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      </tr>
+      <tr>
+        <td width="175" class="tdbgreen4" valign="bottom">
+          <table border="0" cellpadding="0" cellspacing="0" width="450" height="60">
+            <tr>
+				<td width="10"><img src="/mag/img/space.gif" width="10" height="7" border="0"></td>
+				<td><img src="/mag/img/headlines/2_eventtyp_${sLangId}.gif" width="188" height="7" border="0"></td>
+				<td width="10" rowspan="4"><img src="/mag/img/space.gif" width="10" height="1" border="0"></td>
+				<td><img src="/mag/img/headlines/4_suchebegriff_${sLangId}.gif" width="188" height="7" border="0"></td>
+				<td width="10" rowspan="4"><img src="/mag/img/space.gif" width="10" height="1" border="0"></td>
+			</tr>
+			<tr>
+				<td width="10"><img src="/mag/img/space.gif" width="10" height="7" border="0"></td>
+            	<td valign="top" align="left" class="inputns4"><select name="cmb_type" size="1" class="input200pink">
+<!-- type selectbox -->
+
+#foreach ($char in $vecCharacter)
+  #set( $c="first" )
+  #set( $bCloseSelect=false )
+  #foreach ($key in $char)
+    #if( $key.getCharacterId().equals("site_category") && $key.getLangId().getBigDecimal().intValue()==1 )
+      #if( $c.equals("first") )
+        <option value="-1">- Allgemein -</option>
+        <option value="-1"></option>
+        <option value="$key.getKeywordId()"#if( $sSelectedType.equals("$key.getKeywordId()") )selected#end>$key.getName()</option>
+      #else
+        <option value="$key.getKeywordId()"#if( $sSelectedType.equals("$key.getKeywordId()") )selected#end>$key.getName()</option>
+      #end
+    #end
+    #if( $key.getCharacterId().equals("type") )
+      #if( $c.equals("first") )
+        <option value="-1"></option>
+        <option value="-1">- Speziell -</option>
+        <option value="-1"></option>
+        <option value="$key.getKeywordId()"#if( $sSelectedType.equals("$key.getKeywordId()") )selected#end>$key.getName()</option>
+      #else
+        <option value="$key.getKeywordId()"#if( $sSelectedType.equals("$key.getKeywordId()") )selected#end>$key.getName()</option>
+      #end
+    #end
+    #set( $c="more" )
+    #set( $bCloseSelect=true )
+  #end
+#end
+
+</select></td>
+<td valign="top" class="inputns4">
+<input name="txtKeyword" type="text" class="input200pink" size="21" value="$!sKeyword">
+</td>
+</tr>
+<tr>
+	<td width="10"><img src="/mag/img/space.gif" width="10" height="15" border="0"></td>
+	<td valign="bottom" height="20"><img src="/mag/img/headlines/3_stilrichtung_${sLangId}.gif" width="188" height="7" border="0"></td>
+	<td><img src="/mag/img/space.gif" width="10" height="1" border="0"></td>
+</tr>
+<tr>
+<td width="10"><img src="/mag/img/space.gif" width="10" height="7" border="0"></td>
+<td valign="bottom" align="left" class="inputns4">
+<!-- style selectbox -->
+#foreach ($char in $vecCharacter)
+#set( $c="first" )
+#set( $bCloseSelect=false )
+#foreach( $key in $char )
+#if( $key.getCharacterId().equals("style") )
+#if( $c.equals("first") )
+<select name="cmb_$key.getCharacterId()" size="1" class="input200pink">
+<option value="-1">- Stilrichtung -</option>
+<option value="-1"></option>
+<option value="$key.getKeywordId()"#if( $sSelectedStyle.equals("$key.getKeywordId()") )selected#end>$key.getName()</option>
+#else
+<option value="$key.getKeywordId()"#if( $sSelectedStyle.equals("$key.getKeywordId()") )selected#end>$key.getName()</option>
+#end
+#end
+#set($c="more")
+#set( $bCloseSelect=true )
+#end
+#*
+#if( $bCloseSelect )
+</select>
+#end
+*#
+#end
+
+</select>
+              </td>
+              <td valign="bottom" align="right" class="inputns4"><a href="javascript:document.forms['fmSelect'].submit()"><img src="/mag/img/nav/go.gif" width="22" height="18" border="0"></a></td>
+            </tr>
+          </table>
+      </tr>
+      </form>
+      <tr height="10">
+        <td height="5" class="tdbgreen4" align="right"><img src="/mag/img/space.gif" width="10" height="8" border="0"></td>
+      </tr>
+      <tr height="1">
+        <td width="1" height="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td height="1" class="tdbgreen2" colspan="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      </tr>
+      <tr height="1">
+        <td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td height="1" width="1" class="tdbgreen1" colspan="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+        <td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+      </tr>
+  </table>
+  </form>
+</td>

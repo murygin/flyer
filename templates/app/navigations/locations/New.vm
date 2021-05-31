@@ -1,0 +1,111 @@
+					<table border="0" cellpadding="0" cellspacing="0" width="231">
+						<colgroup>
+							<col width="221">
+							<col width="10">
+						</colgroup>
+						<tr height="21">
+							<td colspan="2" height="21">
+								<table border="0" cellpadding="0" cellspacing="0" width="231" height="21">
+									<colgroup>
+										<col width="18">
+										<col width="188">
+										<col width="25">
+									</colgroup>
+									<tr height="7">
+										<td rowspan="3"><img src="/mag/img/layout/header_left_magenta_small.gif" width="18" height="21" border="0"></td>
+										<td width="188" height="7" class="tdbpink3"><img src="/mag/img/layout/header_top_magenta.gif" width="188" height="7" border="0"></td>
+										<td rowspan="3"><img src="/mag/img/layout/header_right_magenta_small.gif" width="25" height="21" border="0"></td>
+									</tr>
+									<tr height="10">
+										<td width="188" height="10" class="tdbpink2"><img src="/mag/img/headlines/neuelocations_de.gif" width="188" height="10" border="0"></td>
+									</tr>
+									<tr height="4">
+										<td width="188" height="4"><img src="/mag/img/layout/header_bottom_magenta.gif" width="188" height="4" border="0"></td>
+									</tr>				
+								</table>
+							</td>
+						</tr>
+						<tr height="1">
+							<td colspan="2" height="1"><img src="/mag/img/layout/teaserbox_spacer_magenta.gif" width="231" height="1" border="0"></td>
+						</tr>
+						<tr>
+							<td width="221">
+								<table border="0" cellpadding="0" cellspacing="0" width="221">
+									<colgroup>
+										<col width="1">
+										<col width="1">
+										<col width="4">
+										<col width="214">
+										<col width="1">
+									</colgroup>
+									<tr>
+										<td width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+										<td width="214" class="tdbpink4"><img src="/mag/img/space.gif" width="214" height="1" border="0"></td>
+										<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+									</tr>
+									<tr>
+										<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="1" class="white" colspan="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+									</tr>
+									<tr>
+										<td width="1" class="tdbpink4" rowspan="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="4" class="tdpinkh"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+										<td class="tdpinkh" width="215"><img src="/mag/img/space.gif" width="214" height="5" border="0"><br>
+											<span class="copy9"><a href="#">Fork-Lounge<br>
+											</a></span><img src="/mag/img/space.gif" width="214" height="5" border="0"></td>
+										<td width="4" class="tdbpink1" rowspan="7"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+									</tr>
+									<tr>
+										<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td colspan="2" class="tdpinkh"><img src="/mag/img/ornaments/dotted-line_218px_magenta.gif" width="218" height="2" border="0"></td>
+									</tr>
+									<tr>
+										<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="4" class="tdpinkd"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+										<td width="213" class="tdpinkd"><span class="copy12"><img src="/mag/img/space.gif" width="214" height="5" border="0"><br>
+											</span><span class="copy9"><a href="#">End 2 End<br>
+											</a></span><img src="/mag/img/space.gif" width="214" height="5" border="0">
+										</td>
+									</tr>
+									<tr>
+										<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td colspan="2" class="tdpinkh"><img src="/mag/img/ornaments/dotted-line_218px_magenta.gif" width="218" height="2" border="0"></td>
+									</tr>
+									<tr>
+										<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="4" class="tdpinkh"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+										<td class="tdpinkh" width="214"><img src="/mag/img/space.gif" width="214" height="5" border="0"><br>
+											<span class="copy9"><a href="#">Blue Note<br>
+											</a></span><img src="/mag/img/space.gif" width="214" height="5" border="0">
+										</td>
+									</tr>
+									<tr>
+										<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td colspan="2" class="tdpinkh"><img src="/mag/img/ornaments/dotted-line_218px_magenta.gif" width="218" height="2" border="0"></td>
+									</tr>
+									<tr>
+										<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="4" class="tdpinkd"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+										<td width="213" class="tdpinkd"><span class="copy11"><img src="/mag/img/space.gif" width="214" height="5" border="0"><br>
+											</span><span class="copy9"><a href="#">Rodeo-Bar<br>
+											</a></span><img src="/mag/img/space.gif" width="214" height="5" border="0">
+										</td>
+									</tr>
+									<tr>
+										<td width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+										<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+										<td width="214" class="tdbpink4"><img src="/mag/img/space.gif" width="214" height="1" border="0"></td>
+										<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+									</tr>
+								</table>
+							</td>
+							<td width="10" background="/mag/img/layout/border_pink.gif"><img src="/mag/img/space.gif" width="10" height="1" border="0"></td>
+						</tr>
+						<tr height="12"><map name="mehr"><area shape=rect coords="170,1,217,12" href="javascript:void()"></map>
+							<td colspan="2" height="12"><img src="/mag/img/layout/teaserbox_bottom_magenta2.gif" width="231" height="24" border="0" usemap="#mehr"></td>
+						</tr>
+					</table>

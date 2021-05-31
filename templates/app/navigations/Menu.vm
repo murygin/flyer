@@ -1,0 +1,41 @@
+<font face="$ui.sansSerifFonts">
+<a href="$link.setPage("Insert.vm")">Insert Entry</a>
+<p>
+<b>Flux</b>
+<br>
+<a href="$link.setPage("user,FluxUserList.vm")">Users</a>
+<br>
+<a href="$link.setPage("group,FluxGroupList.vm")">Groups</a>
+<br>
+<a href="$link.setPage("role,FluxRoleList.vm")">Roles</a>
+<br>
+<a href="$link.setPage("permission,FluxPermissionList.vm")">Permissions</a>
+<p>
+<b>Services</b>
+##<br>
+##<a href="">Intake Service</a>
+##<br>
+##<a href="">Localization Service</a>
+##<br>
+##<a href="">Pull Service</a>
+##<br>
+##<a href="">Scheduler Service</a>
+<br>
+<a href="$link.setPage("Upload.vm")">Upload Service</a>
+<br>
+<a href="$link.setPage("ServletInfo.vm")">Servlet Service</a>
+<br>
+##<a href="">Unique Id Service</a>
+##<br>
+##<a href="">XML-RPC Service</a>
+##<br>
+##<a href="">XSLT Service</a>
+<p>
+<b>Common Tasks</b>
+<br>
+<a href="">User Downloads</a>
+<p>
+<a href="$link.setPage("Index.vm")">Home</a>
+<p>
+<a href="$link.setAction("LogoutUser")">Logout</a>
+</font>

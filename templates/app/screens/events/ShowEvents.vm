@@ -1,0 +1,286 @@
+###############################################################################
+## ShowEvents.vm displays events
+##
+## data to display:
+## $vecEventKeywords, a vector of EventKeywordWrappers
+## $EventKeyword.getEvent() returns the location itself
+## $EventKeywords.getEvent() returns the event
+## $EventKeywords.getLocation() returns the location of the event
+## $EventKeywords.getTypes() returns the types of the event
+## $EventKeywords.getStyles() returns the styles of ther event
+##
+## $vecSteps seitenzahlen zum weiterschalten
+## $nNumber the number of events
+## $nCurr the first displayed event
+## $nLast the first event to display if someone hits the last button
+## $nNext the first event to display if someone hits the next button
+## $sSearch the query string with search params to add to url
+###############################################################################
+
+$page.setTitle("ShowEvents.vm")
+$page.setBgColor("#ffffff")
+$page.setStyleSheet("/mag/css/style.css")
+
+$data.setLayoutTemplate("/events/Index.vm")
+
+<table border="0" cellpadding="0" cellspacing="0" width="704">
+  <tr height="21">
+    <td colspan="2" height="21">
+      <table border="0" cellpadding="0" cellspacing="0" width="177" height="21">
+        <colgroup>
+          <col width="18">
+          <col width="189">
+          <col width="25">
+          <col width="3">
+          <col width="18">
+          <col width="199">
+          <col width="25">
+          <col width="3">
+          <col width="18">
+          <col width="199">
+          <col width="25">
+        </colgroup>
+        <tr height="7">
+          <td rowspan="3" width="18"><img src="/mag/img/layout/header_left_blue_small.gif" width="18" height="21" border="0"></td>
+          <td width="189" height="7" background="/mag/img/layout/header_top_blue.gif"><img src="/mag/img/space.gif" width="189" height="7" border="0"></td>
+          <td rowspan="3" width="25"><img src="/mag/img/layout/header_right_blue_small.gif" width="25" height="21" border="0"></td>
+          <td width="3" rowspan="3"><img src="/mag/img/space.gif" width="3" height="1" border="0"></td>
+          <td rowspan="3" width="18"><img src="/mag/img/layout/header_left_blue_small.gif" width="18" height="21" border="0"></td>
+          <td width="190" height="7" background="/mag/img/layout/header_top_blue.gif"><img src="/mag/img/space.gif" width="190" height="7" border="0"></td>
+          <td rowspan="3" width="25"><img src="/mag/img/layout/header_right_blue_small.gif" width="25" height="21" border="0"></td>
+          <td width="3" rowspan="3"><img src="/mag/img/space.gif" width="3" height="1" border="0"></td>
+          <td rowspan="3" width="18"><img src="/mag/img/layout/header_left_blue_small.gif" width="18" height="21" border="0"></td>
+          <td width="190" height="7" background="/mag/img/layout/header_top_blue.gif"><img src="/mag/img/space.gif" width="190" height="7" border="0"></td>
+          <td rowspan="3" width="25"><img src="/mag/img/layout/header_right_blue_small.gif" width="25" height="21" border="0"></td>
+        </tr>
+        <tr height="10">
+          <td width="189" height="10" class="tdbbleu3"><!-- header gfx left column start --><img src="/mag/img/headlines/event_${sLangId}.gif" width="188" height="10" border="0"><!-- header gfx left column end --></td>
+          <td width="190" height="10" class="tdbbleu3"><!-- header gfx middle column start --><img src="/mag/img/headlines/location_${sLangId}.gif" width="188" height="10" border="0"><!-- header gfx middle column end --></td>
+          <td width="190" height="10" class="tdbbleu3"><!-- header gfx right column start --><img src="/mag/img/headlines/typundstil_${sLangId}.gif" width="188" height="10" border="0"><!-- header gfx right column end --></td>
+        </tr>
+        <tr height="4">
+          <td width="189" height="4" background="/mag/img/layout/header_bottom_blue.gif"><img src="/mag/img/space.gif" width="189" height="4" border="0"></td>
+          <td width="190" height="4" background="/mag/img/layout/header_bottom_blue.gif"><img src="/mag/img/space.gif" width="190" height="4" border="0"></td>
+          <td width="190" height="4" background="/mag/img/layout/header_bottom_blue.gif"><img src="/mag/img/space.gif" width="190" height="4" border="0"></td>
+        </tr>
+        <tr height="1">
+          <td height="1" colspan="10"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+          <td height="1" align="right"><img src="/mag/img/layout/contentbox_spacer_blue_rite.gif" width="10" height="1" border="0"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="694">
+    <!--start of listbox content-table -->
+      <table border="0" cellpadding="0" cellspacing="0" width="694">
+        <colgroup>
+          <col width="1">
+          <col width="4">
+          <col width="230">
+          <col width="1">
+          <col width="4">
+          <col width="231">
+          <col width="1">
+          <col width="4">
+          <col width="218">
+        </colgroup>
+        #set( $bIsEvent=false )
+        #foreach( $EventKeywords in $vecEventKeywords )
+        	#set( $bIsEvent=true )
+        	#set( $event=$EventKeywords.getEvent() )
+          #set( $location=$EventKeywords.getLocation() )
+        	#set( $vecTypes=$EventKeywords.getTypes() )
+        	#set( $vecStyles=$EventKeywords.getStyles() )
+          #if( $location.getAddress().getZip() && $location.getAddress().getZip()!=0 )
+            #set( $nZip = $location.getAddress().getZip() )
+          #else
+            #set( $nZip = "" )
+          #end
+          <!-- loop start -->
+          <tr>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+          </tr>
+          <tr>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="60" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="230" class="white" valign="top"><br>
+              <!-- content linke spalte -->
+              <b><a href="$link.setPage( "events,EventDetail.vm" ).addQueryData( "nEventId", $event.getEventId() )" class="magenta">$event.getName()</a></b><br>
+              $event.getDate( $sLangId )&nbsp;$event.getOpeningtimes()<br>
+            </td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="4" class="tdgreyh" background="/mag/img/backgrounds/bg_table_white.gif"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="231" class="tdgreyh" background="/mag/img/backgrounds/bg_table_white_top.gif" valign="top"><br>
+              #if( $location )
+                <!-- content mittlere spalte -->
+                <b><a href="$link.setPage( "locations,LocationDetail.vm" ).addQueryData( "nLocationId", $location.getLocationId() )"  class="magenta">$location.getName()</a></b><br>
+                $location.getAddress().getStreet()&nbsp;$!location.getAddress().getNumber()<br>
+                #if( $nZip!="" )
+                  $nZip&nbsp;
+                #end
+                $location.getAddress().getTown()&nbsp;$location.getAddress().getDistrict()<br>
+                #if( $location.getUrl1() )
+                  <a href="http://$location.getUrl1()" target="_blank" class="magenta">$location.getUrl1()</a><br><br>
+                #end
+              #else
+                &nbsp;
+              #end
+            </td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="218" class="white" valign="top"><br>
+              <!-- content rechte spalte -->
+              #set( $bIsFirst=true )
+              #foreach( $type in $vecTypes )
+                #if( !$bIsFirst ),&nbsp;#end
+                #set( $bIsFirst=false )
+				$type.getName()
+				<br>
+              #end
+
+              #set( $bIsFirst=true )
+              #foreach( $style in $vecStyles )
+                #if( $bIsFirst )Style:&nbsp;#end
+                #if( !$bIsFirst ),&nbsp;#end
+                #set( $bIsFirst=false )
+                $style.getName()
+              #end
+              <br><br>
+              <form name="alertbird" action="http://www.alertbird.de/CreateBird" method="post" target="_blank">
+                <input type="HIDDEN" name="ac" value="27">
+                <input type="HIDDEN" name="partnerid" value="60">
+                <input type="HIDDEN" name="type" value="4">
+                <input type="HIDDEN" name="frmSubject" value="$event.getName()">
+                <input type="HIDDEN" name="frmEventType" value="4">
+                <input type="HIDDEN" name="starttime" value="true">
+                <input type="HIDDEN" name="startyear" value="$event.getYear()">
+                <input type="HIDDEN" name="startmonth" value="$event.getMonth()">
+                <input type="HIDDEN" name="startday" value="$event.getDayOfMonth()">
+                <input type="HIDDEN" name="starthour" value="$event.getHour()">
+                <input type="HIDDEN" name="startminute" value="$event.getMinute()">
+                <input type="HIDDEN" name="lname" value="$location.getName()">
+                <input type="HIDDEN" name="lstreet" value="$location.getAddress().getStreet()&nbsp;$!location.getAddress().getNumber()">
+                <input type="HIDDEN" name="lcode" value="$nZip">
+                <input type="HIDDEN" name="lcity" value="$location.getAddress().getTown()&nbsp;$location.getAddress().getDistrict()">
+                <input type="HIDDEN" name="moreinfourl" value="$link.setPage( "events,EventDetail.vm" ).addQueryData( "nEventId", $event.getEventId() )">
+                <input type="image" src="/mag/img/ornaments/icn_alertbird.gif" width="68" height="14" border="0">
+              </form><br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="230" height="1" border="0"></td>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="231" height="1" border="0"></td>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="218" height="1" border="0"></td>
+          </tr>
+          <tr>
+            <td width="1" height="4" valign="top"><img src="/mag/img/layout/space_blue_sub.gif" width="1" height="3" border="0"></td>
+            <td class="tdbbleu3" colspan="8"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+          </tr>
+          <tr>
+            <td colspan="9"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+          </tr>
+         <!-- loop stop -->
+         #end
+         #if( !$bIsEvent )
+          <tr>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdgreyd" colspan="2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+          </tr>
+          <tr>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="30" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="230" class="white" valign="top"><br>
+              kein Event gefunden<br>
+              <br>
+            </td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="4" class="tdgreyh" background="/mag/img/backgrounds/bg_table_white.gif"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="231" class="tdgreyh" background="/mag/img/backgrounds/bg_table_white_top.gif" valign="top"><br>
+              &nbsp;<br>
+              <br>
+            </td>
+            <td width="1" class="tdgreyd"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+            <td width="4" class="white"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+            <td width="218" class="white" valign="top"><br>
+              &nbsp;<br>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="230" height="1" border="0"></td>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="231" height="1" border="0"></td>
+            <td width="1" class="tdbbleu1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+            <td class="tdbbleu1"><img src="/mag/img/space.gif" width="218" height="1" border="0"></td>
+          </tr>
+          <tr>
+            <td width="1" height="4" valign="top"><img src="/mag/img/layout/space_blue_sub.gif" width="1" height="3" border="0"></td>
+            <td class="tdbbleu3" colspan="8"><img src="/mag/img/space.gif" width="1" height="4" border="0"></td>
+          </tr>
+          <tr>
+            <td colspan="9"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+          </tr>
+         #end
+      </table>
+      <!-- end of listbox content-table -->
+      </td>
+    <td background="/mag/img/layout/contentbox_border_blue_sub.gif" width="10"><img src="/mag/img/space.gif" width="10" height="1" border="0"></td>
+  </tr>
+  <tr height="12">
+    <td colspan="3" height="14" valign="top"><img src="/mag/img/layout/contentbox_bottom_blue_sub3.gif" width="704" height="12" border="0"></td>
+  </tr>
+</table>
+#if( $nNext!="-1" || $nLast!="-1" )
+  <br>
+  <table border="0" cellpadding="0" cellspacing="0" height="26" width="702">
+    <tr valign="top" height="5">
+      <td rowspan="3" width="76"><!-- button _previous_ start -->
+        #if( $nLast!="-1" )
+          <a href="/mag/servlet/mag/template/events%2CShowEvents.vm?urlFirst=$nLast$sSearch" class="magenta"><img src="/mag/img/toolbars/zurueck_en.gif" width="76" height="26" border="0"></a>&nbsp;
+        #else
+          <img src="/mag/img/toolbars/blanker_left.gif" width="76" height="26" border="0">
+        #end
+      </td>
+      <td width="5" valign="top"><img src="/mag/img/toolbars/left_blank.gif" width="5" height="26" border="0"></td>
+      <td align="center" valign="middle" width="542" height="26" background="/mag/img/toolbars/bg.gif">
+        #foreach( $nStep in $vecSteps )
+          #set( $nCurrStart = ( $nStep - 1 ) * $nNumber )
+          #if( $nCurrStart == $nCurr )
+          $nStep
+          #else
+            &nbsp;<a href="/mag/servlet/mag/template/events%2CShowEvents.vm?urlFirst=$nCurrStart$sSearch" class="magenta">$nStep</a>&nbsp;
+          #end
+        #end
+      </td>
+      <td width="5" valign="top"><img src="/mag/img/toolbars/right.gif" width="5" height="26" border="0"></td>
+      <td width="76">
+        #if( $nNext!="-1" )
+          <a href="/mag/servlet/mag/template/events%2CShowEvents.vm?urlFirst=$nNext$sSearch" class="magenta"><img src="/mag/img/toolbars/weiter_en.gif" width="76" height="26" border="0"></a>
+        #else
+          <img src="/mag/img/toolbars/blanker_right.gif" width="76" height="26" border="0">
+        #end
+      </td>
+    </tr>
+  </table>
+#end

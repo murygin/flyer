@@ -1,0 +1,302 @@
+##############################################################################
+## Start.vm is the start template for locations
+## there ist no layout in this template so far
+## only information is displayed
+##
+## $vecLocationKeywords vector of LocationKeywordWrappern
+## $LocationKeywords.getLocation() returns the location
+## $LocationKeywords.getLocation().getAddress() returns the address of the location
+## $LocationKeywords.getTypes() returns the types of the location
+## $LocationKeywords.getStyles() returns the styles of the location
+##
+## Number of clubs: $nNumberOfClubs
+## Number of venues: $nNumberOfVenues
+## Number of cinemas: $nNumberOfCinemas
+## Number of theatres: $nNumberOfTheatres
+## Number of museums, galeries: $nNumberOfMuseums
+## Number of restaurants, pubs, bistro, cafes: $nNumberOfRestaurants
+## Number of shops: $nNumberOfShops
+##############################################################################
+$page.setTitle("Flyer Locations")
+$page.setBgColor("#ffffff")
+$page.setStyleSheet("/mag/css/style.css")
+$data.setLayoutTemplate("/locations/Index.vm")
+<!-- outer table start-->
+<table border="0" cellpadding="0" cellspacing="0" width="709">
+<tr>
+	<td valign="top">
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="231">
+<colgroup><col width="221"><col width="10"></colgroup>
+	<tr height="21">
+		<td colspan="2" height="21">
+			<table border="0" cellpadding="0" cellspacing="0" width="231" height="30">
+			<colgroup><col width="18"><col width="188"><col width="25"></colgroup>
+				<tr height="7">
+					<td rowspan="5"><img src="/mag/img/layout/header_left_magenta_big.gif" width="18" height="30" border="0"></td>
+					<td width="188" height="7"><img src="/mag/img/layout/header_top_magenta.gif" width="188" height="7" border="0"></td>
+					<td rowspan="5"><img src="/mag/img/layout/teaserbox_right_magenta.gif" width="25" height="30" border="0"></td>
+				</tr>
+				<tr height="5">
+          <!-- random -->
+					<td width="188" height="5" class="tdbpink2"><img src="/mag/img/space.gif" width="73" height="5" border="0"></td>
+				</tr>
+				<tr height="4">
+					<td width="188" height="4" class="tdbpink2"><img src="/mag/img/space.gif" width="188" height="4" border="0"></td>
+				</tr>
+				<tr height="10">
+					<td width="188" height="10" class="tdbpink2"><img src="/mag/img/headlines/neuelocations_${sLangId}.gif" width="188" height="10" border="0"></td>
+				</tr>
+				<tr height="4">
+					<td width="188" height="4"><img src="/mag/img/layout/header_bottom_magenta.gif" width="188" height="4" border="0"></td>
+			</table>
+		</td>
+	</tr>
+	<tr height="1">
+		<td colspan="2" height="1"><img src="/mag/img/layout/teaserbox_spacer_magenta.gif" width="231" height="1" border="0"></td>
+	</tr>
+	<tr>
+		<td width="221">
+			<table border="0" cellpadding="0" cellspacing="0" width="221">
+			<colgroup><col width="1"><col width="1"><col width="4"><col width="214"><col width="1"></colgroup>
+				<tr>
+					<td width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+					<td width="214" class="tdbpink4"><img src="/mag/img/space.gif" width="214" height="1" border="0"></td>
+					<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				</tr>
+				<tr>
+					<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td width="1" class="white" colspan="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				</tr>
+
+
+#set( $iTdCounter=1 )
+#set( $sTdStyle="tdbpink6" )
+#set( $bIsLocation=false )
+#foreach( $LocationKeywords in $vecLocationKeywords )
+
+	#set( $bIsLocation=true )
+	#set( $location=$LocationKeywords.getLocation() )
+
+	#set( $vecTypes=$LocationKeywords.getTypes() )
+	#set( $vecStyles=$LocationKeywords.getStyles() )
+
+				<tr>
+					<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td width="4" class="$sTdStyle"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+					<td class="$sTdStyle" width="215"><br>
+						<b><a href="$link.setPage( "locations,LocationDetail.vm" ).addQueryData( "nLocationId", $location.getLocationId() )"  class="magenta">$location.getName()</a></b>&nbsp;$location.getAddress().getStreet()&nbsp;$!location.getAddress().getNumber()<br>
+					  <br>
+          </td>
+					<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				</tr>
+			#if($iTdCounter < 5)
+				<tr>
+					<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td colspan="2" class="tdbpinkh"><img src="/mag/img/ornaments/dotted-line_218px_magenta.gif" width="218" height="2" border="0"></td>
+					<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				</tr>
+			#end
+		#set( $iTdCounter=$iTdCounter + 1 )
+	##$location.getAddress().getStreet()&nbsp;$!location.getAddress().getNumber()<br>
+	##$location.getAddress().getZip()&nbsp;$location.getAddress().getTown()&nbsp;$location.getAddress().getDistrict()<br>
+	##$!location.getUrl1()<br>
+	##$!location.getAddress().getPubtrans()<br>
+	#set( $bIsFirst=true )
+	#if( $sTdStyle=="tdbpink6" )
+		#set( $sTdStyle="tdbpink5" )
+	#else
+		#set( $sTdStyle="tdbpink6" )
+	#end
+#end
+  			<tr>
+					<td width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+					<td width="214" class="tdbpink4"><img src="/mag/img/space.gif" width="214" height="1" border="0"></td>
+					<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="10" background="/mag/img/layout/border_pink.gif"><img src="/mag/img/space.gif" width="10" height="1" border="0"></td>
+	</tr>
+	<tr height="12">
+		<td colspan="2" height="12"><img src="/mag/img/layout/teaserbox_bottom_magenta.gif" width="231" height="12" border="0"></td>
+	</tr>
+</table>
+
+
+
+</td>
+<td width="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+<td valign="top">
+
+
+#set ( $iWidthClubs = $nNumberOfClubs )
+#set ( $iWidthVenues = $nNumberOfVenues )
+#set ( $iWidthCinemas = $nNumberOfCinemas)
+#set ( $iWidthTheatres = $nNumberOfTheatres)
+#set ( $iWidthMuseums = $nNumberOfMuseums)
+#set ( $iWidthRestaurants = $nNumberOfRestaurants)
+#set ( $iWidthShops = $nNumberOfShops)
+#set ( $iBiggest = 0)
+#set ( $aAllcounts = [$iWidthClubs,$iWidthVenues,$iWidthCinemas,$iWidthTheatres,$iWidthMuseums,$iWidthRestaurants,$iWidthShops] )
+#foreach ($iCount in $aAllcounts)
+	#if ( $iCount > $iBiggest )
+		#set ( $iBiggest = $iCount )
+	#end
+#end
+
+
+#set ( $iPercClubs = $iWidthClubs * 100 / $iBiggest )
+#set ( $iWidthClubs = 244 * $iPercClubs /100 )
+
+#set ( $iPercVenues = $iWidthVenues * 100 / $iBiggest )
+#set ( $iWidthVenues = 244 * $iPercVenues /100 )
+
+#set ( $iPercCinemas = $iWidthCinemas * 100 / $iBiggest )
+#set ( $iWidthCinemas = 244 * $iPercCinemas /100 )
+
+#set ( $iPercTheatres = $iWidthTheatres * 100 / $iBiggest )
+#set ( $iWidthTheatres = 244 * $iPercTheatres /100 )
+
+#set ( $iPercMuseums = $iWidthMuseums * 100 / $iBiggest )
+#set ( $iWidthMuseums = 244 * $iPercMuseums /100 )
+
+#set ( $iPercRestaurants = $iWidthRestaurants * 100 / $iBiggest )
+#set ( $iWidthRestaurants = 244 * $iPercRestaurants /100 )
+
+#set ( $iPercShops = $iWidthShops * 100 / $iBiggest )
+#set ( $iWidthShops = 244 * $iPercShops /100 )
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="468">
+<colgroup><col width="20"><col width="244"><col width="11"><col width="34"><col width="17"><col width="118"><col width="24"></colgroup>
+	<tr height="82">
+		<td colspan="7" height="82"><img src="/mag/img/bar-graph/top.gif" width="468" height="82" border="0"></td>
+	</tr>
+	<tr height="15">
+		<td rowspan="13" width="20"><img src="/mag/img/bar-graph/left.gif" width="20" height="219" border="0"></td>
+		<td width="244" height="15" background="/mag/img/bar-graph/bg_bar.gif">
+			<table border="0" cellpadding="0" cellspacing="0" width="$iWidthClubs" height="15">
+				<tr>
+					<td background="/mag/img/bar-graph/bar.gif" width="$iWidthClubs" height="15" align="right"><img src="/mag/img/bar-graph/decker.gif" width="7" height="15" border="0"></td>
+				</tr>
+			</table>
+		</td>
+		<td rowspan="13" width="11"><img src="/mag/img/bar-graph/numbers_left.gif" width="11" height="219" border="0"></td>
+		<td height="15" width="34" background="/mag/img/bar-graph/bg_number.gif"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","clubs")" class="magenta">$nNumberOfClubs</a></td>
+		<td rowspan="13" width="17"><img src="/mag/img/bar-graph/numbers_right.gif" width="17" height="219" border="0"></td>
+		<td rowspan="2" width="118"><img src="/mag/img/bar-graph/centre.gif" width="118" height="34" border="0"></td>
+		<td rowspan="13" width="24"><img src="/mag/img/bar-graph/right.gif" width="24" height="219" border="0"></td>
+	</tr>
+	<tr height="19">
+		<td width="244" height="19"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","clubs")" class="magenta"><img src="/mag/img/bar-graph/clubsundbars.gif" width="244" height="19" border="0"></a></td>
+		<td height="19" width="34"><img src="/mag/img/bar-graph/spacer.gif" width="34" height="19" border="0"></td>
+	</tr>
+	<tr height="15">
+		<td width="244" height="15" background="/mag/img/bar-graph/bg_bar.gif">
+			<table border="0" cellpadding="0" cellspacing="0" width="$iWidthVenues" height="15">
+				<tr>
+					<td background="/mag/img/bar-graph/bar.gif" width="$iWidthVenues" height="15" align="right"><img src="/mag/img/bar-graph/decker.gif" width="7" height="15" border="0"></td>
+				</tr>
+			</table>
+		</td>
+		<td height="15" width="34" background="/mag/img/bar-graph/bg_number.gif"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","venues")" class="magenta">$nNumberOfVenues</a></td>
+		<td rowspan="11"><img src="/mag/img/bar-graph/gfx.gif" width="118" height="185" border="0"></td>
+	</tr>
+	<tr height="19">
+		<td width="244" height="19"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","venues")" class="magenta"><img src="/mag/img/bar-graph/veranstaltungsorte_${sLangId}.gif" width="244" height="19" border="0"></a></td>
+		<td height="19" width="34"><img src="/mag/img/bar-graph/spacer.gif" width="34" height="19" border="0"></td>
+	</tr>
+	<tr height="15">
+		<td width="244" height="15" background="/mag/img/bar-graph/bg_bar.gif">
+			<table border="0" cellpadding="0" cellspacing="0" width="$iWidthCinemas" height="15">
+				<tr>
+					<td background="/mag/img/bar-graph/bar.gif" width="$iWidthCinemas" height="15" align="right"><img src="/mag/img/bar-graph/decker.gif" width="7" height="15" border="0"></td>
+				</tr>
+			</table>
+		</td>
+		<td height="15" width="34" background="/mag/img/bar-graph/bg_number.gif"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","cinemas")" class="magenta">$nNumberOfCinemas</a></td>
+	</tr>
+	<tr height="19">
+		<td width="244" height="19"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","cinemas")" class="magenta"><img src="/mag/img/bar-graph/kinos_${sLangId}.gif" width="244" height="19" border="0"></a></td>
+		<td height="19" width="34"><img src="/mag/img/bar-graph/spacer.gif" width="34" height="19" border="0"></td>
+	</tr>
+	<tr height="15">
+		<td width="244" height="15" background="/mag/img/bar-graph/bg_bar.gif">
+			<table border="0" cellpadding="0" cellspacing="0" width="$iWidthTheatres" height="15">
+				<tr>
+					<td background="/mag/img/bar-graph/bar.gif" width="$iWidthTheatres" height="15" align="right"><img src="/mag/img/bar-graph/decker.gif" width="7" height="15" border="0"></td>
+				</tr>
+			</table>
+		</td>
+		<td height="15" width="34" background="/mag/img/bar-graph/bg_number.gif"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","stage")" class="magenta">$nNumberOfTheatres</a></td>
+	</tr>
+	<tr height="19">
+		<td width="244" height="19"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","stage")" class="magenta"><img src="/mag/img/bar-graph/theater.gif" width="244" height="19" border="0"></a></td>
+		<td height="19" width="34"><img src="/mag/img/bar-graph/spacer.gif" width="34" height="19" border="0"></td>
+	</tr>
+	<tr height="15">
+		<td width="244" height="15" background="/mag/img/bar-graph/bg_bar.gif">
+			<table border="0" cellpadding="0" cellspacing="0" width="$iWidthMuseums" height="15">
+				<tr>
+					<td background="/mag/img/bar-graph/bar.gif" width="$iWidthMuseums" height="15" align="right"><img src="/mag/img/bar-graph/decker.gif" width="7" height="15" border="0"></td>
+				</tr>
+			</table>
+		</td>
+		<td height="15" width="34" background="/mag/img/bar-graph/bg_number.gif"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","arts").addQueryData("cmb_style","gallery")" class="magenta">$nNumberOfMuseums</a></td>
+	</tr>
+	<tr height="19">
+		<td width="244" height="19"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","arts").addQueryData("cmb_style","gallery")" class="magenta"><img src="/mag/img/bar-graph/galerien_${sLangId}.gif" width="244" height="19" border="0"></a></td>
+		<td height="19" width="34"><img src="/mag/img/bar-graph/spacer.gif" width="34" height="19" border="0"></td>
+	</tr>
+	<tr height="15">
+		<td width="244" height="15" background="/mag/img/bar-graph/bg_bar.gif">
+			<table border="0" cellpadding="0" cellspacing="0" width="$iWidthRestaurants" height="15">
+				<tr>
+					<td background="/mag/img/bar-graph/bar.gif" width="$iWidthRestaurants" height="15" align="right"><img src="/mag/img/bar-graph/decker.gif" width="7" height="15" border="0"></td>
+				</tr>
+			</table>
+		</td>
+		<td height="15" width="34" background="/mag/img/bar-graph/bg_number.gif"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","food")" class="magenta">$nNumberOfRestaurants</a></td>
+	</tr>
+	<tr height="19">
+		<td width="244" height="19"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","food")" class="magenta"><img src="/mag/img/bar-graph/essenundtrinken_${sLangId}.gif" width="244" height="19" border="0"></a></td>
+		<td height="19" width="34"><img src="/mag/img/bar-graph/spacer.gif" width="34" height="19" border="0"></td>
+	</tr>
+	<tr height="15">
+		<td width="244" height="15" background="/mag/img/bar-graph/bg_bar.gif">
+			<table border="0" cellpadding="0" cellspacing="0" width="$iWidthShops" height="15">
+				<tr>
+					<td background="/mag/img/bar-graph/bar.gif" width="$iWidthShops" height="15" align="right"><img src="/mag/img/bar-graph/decker.gif" width="7" height="15" border="0"></td>
+				</tr>
+			</table>
+		</td>
+		<td height="15" width="34" background="/mag/img/bar-graph/bg_number.gif"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","shopping_cat")" class="magenta">$nNumberOfShops</a></td>
+	</tr>
+	<tr height="32">
+		<td colspan="7" height="32"><img src="/mag/img/bar-graph/bottom.gif" width="468" height="32" border="0"></td>
+	</tr>
+</table>
+
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+

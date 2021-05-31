@@ -1,0 +1,18 @@
+## Index Frameset
+## @version: $Id: Index.vm,v 1.2 2001/09/06 10:18:12 heiko Exp $
+
+#set($edition_name = $data.getSession().getAttribute("activeEdition").getNameLong())
+#set($issue_name = $data.getSession().getAttribute("activeIssue").getName())
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Flyer Home, logged in for $edition_name (Issue $issue_name) </title>
+</head>
+<frameset cols="800,*" frameborder=0 border=0>
+	<frameset rows="*,100" frameborder=0 border=0 framespacing=0>
+		<frame name="content" src="$link.setPage("Home.vm")">
+		<frame name="nav" src="$link.setPage("mainnav,MainNav.vm")" marginwidth=0 marginheight=0 scrolling=no>
+	</frameset>	
+	<frame name="blank" src="$link.setPage("frames,Blank.vm")">
+</frameset>
+</html>

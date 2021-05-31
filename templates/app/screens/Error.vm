@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Composer</title>
+</head>
+<link rel="stylesheet" href="/laika/css/articleeditor.css">
+<body bgcolor="#ffffff" background="/laika/img/articleeditor/bg.gif">
+
+<b>The reason for the error was:</b>
+<p>
+<pre>
+$processingException
+
+</pre>
+
+<P>
+    <b>The stacktrace is as follows:</b>
+<pre>
+$stackTrace
+</pre>
+
+
+</body></html>

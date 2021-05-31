@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<link rel="stylesheet" href="/mag/css/style.css">
+</head>
+
+<body bgcolor="#ffffff" background="/mag/img/backgrounds/bg_content.gif" link=#000000 vlink=#000000 alink=#000000>
+		<!-- outer table start-->
+		<table border="0" cellpadding="0" cellspacing="0" width="709">
+			<tr height="5">
+				<td width="5" height="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+				<td width="231" height="5"><img src="/mag/img/space.gif" width="231" height="5" border="0"></td>
+				<td  width="5" height="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+				<td width="468" height="5"><img src="/mag/img/space.gif" width="468" height="5" border="0"></td>
+			</tr>
+			<tr>
+				<td width="5"></td>
+				<td width="231" valign="top"><!-- nav table links start -->
+					<table border="0" cellpadding="0" cellspacing="0" width="231">
+						<tr height="1">
+							<td height="1" colspan="6"><!-- nav table header gfx start --><img src="/mag/img/super-header/ueberuns_geschichte_de.gif" width="231" height="56" border="0"><!-- nav table header gfx end --></td>
+						</tr>
+						<tr height="1">
+							<td height="1" colspan="6"><img src="/mag/img/space.gif" width="231" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgreen1"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" class="tdbgreen1"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgreen4"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" class="tdbgreen4"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="5">
+							<td width="1" class="tdbgreen1" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="1" class="tdbgreen4" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="5" class="tdbgreen3" rowspan="3"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td width="222" class="tdbgreen3" height="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td width="1" class="tdbgreen2" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="1" class="tdbgreen1" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr>
+							<td width="222" class="tdbgreen3">
+								 <script language="javascript">
+                                                                function browseNav() {
+                                                                        sel = document.forms['quick'].nav.options.selectedIndex;
+                                                                        uri = document.forms['quick'].nav.options[sel].value;                                                        
+                                                                        document.location.href = uri;
+                                                                }
+                                                                </script>
+								<form name="quick">
+									<img src="/mag/img/headlines/1_quicknav_de.gif" width="188" height="7" border="0"><br>
+									<select name="nav" size="1" class="input200pink" onchange="browseNav()">
+										<option value="$link.setPage("ueber,History.vm")">Geschichte
+										<option value="$link.setPage("ueber,Impressum.vm")">Impressum
+										<option value="$link.setPage("ueber,Contact.vm")">Kontakt
+									</select><br>
+							</td>
+						</tr>
+						</form>
+						<tr height="10">
+							<td height="10" width="222" class="tdbgreen3"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgreen2"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" class="tdbgreen2"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgreen1"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" class="tdbgreen1"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+					</table>
+					<!-- nav table links end --><br>
+					<!-- schnellkontakt table start -->
+					<table border="0" cellpadding="0" cellspacing="0" width="231">
+						<tr height="1">
+							<td height="1" colspan="6">
+								<table border="0" cellpadding="0" cellspacing="0" width="231" height="30">
+									<colgroup>
+									<col width="18">
+										<col width="188">
+											<col width="25">
+												</colgroup>
+												<tr height="7">
+													<td rowspan="5"><img src="/mag/img/layout/header_left_magenta_big.gif" width="18" height="30" border="0"></td>
+													<td width="188" height="7"><img src="/mag/img/layout/header_top_magenta.gif" width="188" height="7" border="0"></td>
+													<td rowspan="5"><img src="/mag/img/layout/teaserbox_right_magenta.gif" width="25" height="30" border="0"></td>
+												</tr>
+												<tr height="5">
+													<td width="188" height="5" class="tdbpink2"><img src="/mag/img/phrases/50.gif" width="188" height="5" border="0"></td>
+												</tr>
+												<tr height="4">
+													<td width="188" height="4" class="tdbpink2"><img src="/mag/img/space.gif" width="188" height="4" border="0"></td>
+												</tr>
+												<tr height="10">
+													<td width="188" height="10" class="tdbpink2"><img src="/mag/img/headlines/schnellkontakt_de.gif" width="188" height="10" border="0"></td>
+												</tr>
+												<tr height="4">
+													<td width="188" height="4"><img src="/mag/img/layout/header_bottom_magenta.gif" width="188" height="4" border="0"></td>
+								</table>
+							</td>
+						</tr>
+						<tr height="1">
+							<td height="1" colspan="6"><img src="/mag/img/space.gif" width="231" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgreen1"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" class="tdbgreen1"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgreen4"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" class="tdbgreen4"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="5">
+							<td width="1" class="tdbgreen1" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="1" class="tdbgreen4" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="5" class="tdbgreen3" rowspan="3"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td width="222" class="tdbgreen3" height="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td width="1" class="tdbgreen2" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="1" class="tdbgreen1" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr>
+							<td width="222" class="tdbgreen3">
+								<form name="contactmail" method="get" action="$link.setPage("ueber,History.vm").setAction("ueber.ContactMail")">
+									<img src="/mag/img/headlines/1_betreff_de.gif" width="188" height="7" border="0"><br>
+									<select name="subject" size="1" class="input200pink">
+										<option value="Feedback">Feedback
+										<option value="Technische Fragen">Technische Fragen
+										<option value="Inhaltliche Fragen">Inhaltliche Fragen
+									</select><br>
+									<br>
+									<img src="/mag/img/headlines/2_nachricht_de.gif" width="188" height="7" border="0"><br>
+									<textarea name="msgbody" cols="20" rows="4" class="input200white"></textarea><br>
+									<br>
+									<img src="/mag/img/headlines/3_email_de.gif" width="188" height="7" border="0"><br>
+									<input type="text" name="sender" size="17" class="input200white" maxlength="100"><br>
+									<br>
+                                                                        <a href="javascript: document.forms['contactmail'].submit()">
+                                                                            <img src="/mag/img/buttons/eintragen_de.gif" width="59" height="18" border="0"></a><a href="javascript:document.forms['contactmail'].reset()"><img src="/mag/img/buttons/loeschen_de.gif" width="50" height="18" border="0" hspace="10"></a><br>
+								</form>
+							</td>
+						</tr>
+						</form>
+						<tr height="10">
+							<td height="10" width="222" class="tdbgreen3"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgreen2"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" class="tdbgreen2"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgreen1"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="222" class="tdbgreen1"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgreen1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+					</table>
+					<!-- schnellkontakt table end --><br>
+					<!-- teaser-table pink start -->
+					<table border="0" cellpadding="0" cellspacing="0" width="231">
+						<colgroup>
+						<col width="221">
+							<col width="10">
+								</colgroup>
+								<tr height="21">
+									<td colspan="2" height="21">
+										<table border="0" cellpadding="0" cellspacing="0" width="231" height="30">
+											<colgroup>
+											<col width="18">
+												<col width="188">
+													<col width="25">
+														</colgroup>
+														<tr height="7">
+															<td rowspan="5"><img src="/mag/img/layout/header_left_magenta_big.gif" width="18" height="30" border="0"></td>
+															<td width="188" height="7"><img src="/mag/img/layout/header_top_magenta.gif" width="188" height="7" border="0"></td>
+															<td rowspan="5"><img src="/mag/img/layout/teaserbox_right_magenta.gif" width="25" height="30" border="0"></td>
+														</tr>
+														<tr height="5">
+															<td width="188" height="5" class="tdbpink2"><img src="/mag/img/phrases/47.gif" width="188" height="5" border="0"></td>
+														</tr>
+														<tr height="4">
+															<td width="188" height="4" class="tdbpink2"><img src="/mag/img/space.gif" width="188" height="4" border="0"></td>
+														</tr>
+														<tr height="10">
+															<td width="188" height="10" class="tdbpink2"><img src="/mag/img/headlines/mehrueberuns_de.gif" width="188" height="10" border="0"></td>
+														</tr>
+														<tr height="4">
+															<td width="188" height="4"><img src="/mag/img/layout/header_bottom_magenta.gif" width="188" height="4" border="0"></td>
+														</tr>
+													
+												
+											
+										</table>
+									</td>
+								</tr>
+								<tr height="1">
+									<td colspan="2" height="1"><img src="/mag/img/layout/teaserbox_spacer_magenta.gif" width="231" height="1" border="0"></td>
+								</tr>
+								<tr>
+									<td width="221"><!-- content-table start -->
+										<table border="0" cellpadding="0" cellspacing="0" width="221">
+											<colgroup>
+											<col width="1">
+												<col width="1">
+													<col width="4">
+														<col width="214">
+															<col width="1">
+																</colgroup>
+																<tr>
+																	<td width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+																	<td width="214" class="tdbpink4"><img src="/mag/img/space.gif" width="214" height="1" border="0"></td>
+																	<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																</tr>
+																<tr>
+																	<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td width="1" class="white" colspan="4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																</tr>
+																<tr>
+																	<td width="1" class="tdbpink4" rowspan="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td width="4" class="tdpinkh"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+																	<td class="tdpinkh" width="215"><br>
+																		<span class="copy11"><b><a href="$link.setPage("ueber,Contact.vm")" class="magenta">Kontakt</a></b></span><br>
+																		<span class="copy10">Auf zum Flyer - so erreicht ihr uns.<br>
+																			<br>
+																		</span></td>
+																	<td width="4" class="tdbpink1" rowspan="5"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																</tr>
+																<tr>
+																	<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td colspan="2" class="tdpinkh"><img src="/mag/img/ornaments/dotted-line_218px_magenta.gif" width="218" height="2" border="0"></td>
+																</tr>
+																<tr>
+																	<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td width="4" class="tdpinkd"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+																	<td width="213" class="tdpinkd"><br>
+																		<span class="copy11"><b><a href="$link.setPage("ueber,Impressum.vm")" class="magenta">Impressum</a></b></span><br>
+																		<span class="copy10">Der Flyer von innen - wer macht was?<br>
+																			<br>
+																		</span></td>
+																</tr>
+																<tr>
+																	<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td colspan="2" class="tdpinkh"><img src="/mag/img/ornaments/dotted-line_218px_magenta.gif" width="218" height="2" border="0"></td>
+																</tr>
+																<tr>
+																	<td width="1" class="white"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td width="4" class="tdpinkh"><img src="/mag/img/space.gif" width="4" height="4" border="0"></td>
+																	<td class="tdpinkh" width="214"><br>
+																		<span class="copy11"><b><a href="javascript:alert('Coming soon!')" class="magenta">Pressespiegel</a></b></span><br>
+																		<span class="copy10">Der Flyer von aussen - Artikel &uuml;ber uns.<br>
+																			<br>
+																		</span></td>
+																</tr>
+																<tr>
+																	<td width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																	<td width="4" class="tdbpink4"><img src="/mag/img/space.gif" width="4" height="1" border="0"></td>
+																	<td width="214" class="tdbpink4"><img src="/mag/img/space.gif" width="214" height="1" border="0"></td>
+																	<td width="1" class="tdbpink4"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+																</tr>
+															
+															
+														
+													
+												
+											
+										</table>
+										<!-- content-table end --></td>
+									<td width="10" background="/mag/img/layout/border_pink.gif"><img src="/mag/img/space.gif" width="10" height="1" border="0"></td>
+								</tr>
+								<tr height="12"><map name="mehr"><area shape=rect coords="170,1,217,12" href="javascript:void()"></map>
+									<td colspan="2" height="12"><img src="/mag/img/layout/teaserbox_bottom_magenta3.gif" width="231" height="12" border="0" usemap="#mehr"></td>
+								</tr>
+							
+						
+					</table>
+					<!-- teaser-table pink end --><br>
+				</td>
+				<td width="5"></td>
+				<td width="468" valign="top"><!-- textbox grau start -->
+					<table border="0" cellpadding="0" cellspacing="0" width="468">
+						<tr height="1">
+							<td height="1" colspan="6">
+								<table border="0" cellpadding="0" cellspacing="0" width="468" height="30">
+									<tr height="7">
+										<td rowspan="5"><img src="/mag/img/layout/header_left_blue_big.gif" width="18" height="30" border="0"></td>
+										<td width="425" height="7"><img src="/mag/img/layout/header_top_blue.gif" width="425" height="7" border="0"></td>
+										<td rowspan="5"><img src="/mag/img/layout/header_right_blue_big.gif" width="25" height="30" border="0"></td>
+									</tr>
+									<tr height="5">
+										<td width="425" height="5" bgcolor="#69b0c2"><img src="/mag/img/phrases/48.gif" width="188" height="5" border="0"></td>
+									</tr>
+									<tr height="4">
+										<td width="425" height="4" bgcolor="#69b0c2"><img src="/mag/img/space.gif" width="188" height="4" border="0"></td>
+									</tr>
+									<tr height="10">
+										<td width="425" height="10" bgcolor="#69b0c2"><img src="/mag/img/headlines/geschichte_de.gif" width="188" height="10" border="0"></td>
+									</tr>
+									<tr height="4">
+										<td width="425" height="4"><img src="/mag/img/layout/header_bottom_blue.gif" width="425" height="4" border="0"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr height="1">
+							<td height="1" colspan="6"><img src="/mag/img/space.gif" width="468" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgrey1"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="459" class="tdbgrey1"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdhwhite"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdhwhite"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="459" class="tdhwhite"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdhwhite"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="5">
+							<td width="1" rowspan="3" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="1" rowspan="3" class="tdhwhite"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="5" height="5" class="tdgreyh"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+							<td width="459" height="5" class="tdgreyh"><img src="/mag/img/space.gif" width="459" height="5" border="0"></td>
+							<td width="1" rowspan="3" class="tdbgrey2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="1" rowspan="3" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr>
+							<td width="5" class="tdgreyh"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td width="459" class="tdgreyh">
+								<table border="0" cellpadding="0" cellspacing="0" width="459">
+									<tr>
+										<td width="80" valign="top" rowspan="2"><img src="/mag/img/thumbnails/ueberuns_flyercover.gif" width="78" height="110" border="1"></td>
+										<td width="10"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+										<td width="369" valign="top"><span class="copy11"><b>Flyin' High - die Geschichte des FLYER</b></span><br>
+										</td>
+									</tr>
+									<tr>
+										<td width="10"></td>
+										<td width="369" valign="bottom"><a href="javascript:alert('Coming soon!')"><img src="/mag/img/ornaments/icn_mynotes.gif" width="47" height="16" border="0"></a><img src="/mag/img/space.gif" width="35" height="10" border="0"><a href="javascript:alert('Coming soon!')"><img src="/mag/img/ornaments/icn_alertbird.gif" width="68" height="14" border="0"></a></td>
+									</tr>
+								</table>
+								<br>
+								<span class="copy10">Der FLYER wurde Ende 1994 von Marc Wohlrabe in Berlin gegr&uuml;ndet. Seine Vision war ein handlicher Navigator durch die vitale Clubszene der Haupstadt. Informationen aus dem vielseitigen Nachtleben der 24-Stunden-Metropole, die nur in Form von Handzetteln verf&uuml;gbar waren, sollten fortan in einem Magazin im praktischen Hosentaschenformat geb&uuml;ndelt werden. Auch das Cover-Konzept war einzigartig: F&uuml;r sein Titelbild adaptierte der FLYER bekannte Marken aus der Konsumwelt und dr&uuml;ckte ihnen so seinen Stempel auf. Da jeder FLYER neu und anders aussah, avancierten die Hefte schnell zum begehrten Sammler-Objekt.  <br>
+									<br>
+									Die FLYER-Idee setzte sich zun&auml;chst in ganz Deutschland durch: 1995 und 1996 kamen Regionalausgaben in Hamburg, K&ouml;ln/NRW, M&uuml;nchen und Frankfurt hinzu. 1998 etablierte sich der FLYER mit seiner Sachsen-Ausgabe auch in den neuen Bundesl&auml;ndern. Inzwischen erzielt der FLYER in ganz Deutschland eine monatliche Auflage von 260.000 St&uuml;ck (210.000 IVW-gepr&uuml;ft.). <br>
+									<br>
+									Auch inhaltlich ging es schnell nach vorne: Zun&auml;chst hatte sich die Redaktion auf Informationen zu Clubs und Nightlife konzentriert. Das Spektrum erweiterte sich um Themen wie Mode, Musik, Film und Lifestyle, die allesamt aus der etwas anderen FLYER-Perspektive angegangen wurden. Aus dem bunten Terminkalender wurde ein ambitioniertes Stadtmagazin im A6-Format.   <br>
+									<br>
+									Die logische Konsequenz des Erfolgs in Deutschland war die Internationalisierung der FLYER-Idee. 1998 gr&uuml;ndete Marc Wohlrabe zusammen mit Hosi Simon FLYER New York, der inzwischen mit einer Auflage von 75.000 Exemplaren verbreitet wird. Im Jahr 2000 folgten FLYER San Francisco (Auflage: 30.000) und URBANFLYER Tokyo (Auflage: 50.000). Damit ist der FLYER das erste globale Netzwerk f&uuml;r neue Trends und akkurate Stadtinformationen, die f&uuml;r ein Publikum von urbanen Kosmopoliten und Kulturinterssierten bestimmt sind. Die Gesamtauflage aller FLYER-Ausgaben bel&auml;uft sich zurzeit auf monatlich 415.000 Exemplare weltweit. Seit 2000 sind die internationalen Aktivit&auml;ten des FLYER unter dem Dach der UCN (Urban Culture Network GmbH) zusammengefasst. Damit wurden die strukturellen Voraussetzungen f&uuml;r weiteres Wachstum geschaffen. Als n&auml;chstes Ziel ist Los Angeles anvisiert. Die erste Ausgabe des FLYER L.A. erscheint im Oktober.<br>
+								</span><br>
+							</td>
+						</tr>
+						<tr height="5">
+							<td height="5" width="5" class="tdgreyh"><img src="/mag/img/space.gif" width="5" height="5" border="0"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="5" width="459" class="tdgreyh"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdhwhite"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgrey2"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="459" class="tdbgrey2"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgrey2"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+						<tr height="1">
+							<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="5" class="tdbgrey1"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+							<td height="1" width="459" class="tdbgrey1"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+							<td height="1" width="1" class="tdbgrey1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+							<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+						</tr>
+					</table>
+					<!-- textbox grau end --><br>
+					<img src="/mag/img/ornaments/foobar.gif" width="468" height="14" border="0"><br>
+				</td>
+			</tr>
+			<tr height="5">
+				<td width="5" height="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+				<td width="231" valign="top" height="5"><img src="/mag/img/space.gif" width="231" height="5" border="0"></td>
+				<td width="5" height="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+				<td width="468" valign="top" height="5"><img src="/mag/img/space.gif" width="468" height="5" border="0"></td>
+			</tr>
+		</table>
+		<!-- outer table end -->
+	</body>
+</html>

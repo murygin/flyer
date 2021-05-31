@@ -1,0 +1,56 @@
+BODY {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: BOLD;
+text-decoration: none;
+color: #000000;
+}
+
+.boxtitle {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 14px;
+line-height: 17px;
+font-weight: BOLD;
+text-decoration: none;
+color: #ffffff;
+}
+
+.boxheading {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+font-weight: BOLD;
+text-decoration: none;
+color: #000000;
+}
+
+.resultname {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+text-decoration: none;
+color: #ff3399;       
+}
+
+.boxtext {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+text-decoration: none;
+color: #000000;
+}
+
+.note {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+text-decoration: none;
+color: #222222;
+}
+
+
+a {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+line-height: 13px;
+font-weight: normal;
+text-decoration: none;
+color: #000000;
+}
+

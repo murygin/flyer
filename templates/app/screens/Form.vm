@@ -1,0 +1,33 @@
+$page.setTitle("Insert")
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<form method="post" action="$link.setPage("Index.vm").setAction("SQL")">
+  <div align="left">
+    <table bgcolor="#ffffff" cellpadding="5">
+      <tr>  
+        #formCell ("Title" "title" $entry.Title)
+      </tr>
+      <tr>
+        #formCell ("Author" "author" $entry.Author)
+      </tr>
+      <tr>
+        #formCell ("Department" "dept" $entry.Dept)
+      </tr>
+      <tr>
+        #formCell ("Url" "url" $entry.Url)
+      </tr>
+      <tr>
+        #formCell ("Body" "body" $entry.Body)
+      </tr>
+    </table>
+  
+    <input type="hidden" name="rdfid" value="$entry.RdfId"/>
+    <input type="submit" name="eventSubmit_doInsert" value="Insert"/>
+    <input type="submit" name="eventSubmit_doUpdate" value="Update"/>
+    <input type="submit" name="eventSubmit_doDelete" value="Delete"/>
+  </div>
+</form>
+</body>

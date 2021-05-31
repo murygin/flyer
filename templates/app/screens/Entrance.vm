@@ -1,0 +1,233 @@
+## magazine login template
+## @version: $Id: Entrance.vm,v 1.4 2001/09/09 22:08:41 schmidt Exp $
+
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<title></title>
+<link rel="stylesheet" href="/mag/css/style.css">
+<script language="JavaScript">
+sprechblase_jp = new Image();
+		sprechblase_de = new Image();
+		sprechblase_en = new Image();
+		sprechblase_blank = new Image();
+
+
+		function preloadImages(){
+    	if (document.images) {
+			sprechblase_jp.src="/mag/img/splash/sprechblase_jp.gif";
+			sprechblase_de.src="/mag/img/splash/sprechblase_de.gif";
+			sprechblase_en.src="/mag/img/splash/sprechblase_en.gif";
+			sprechblase_blank.src="/mag/img/splash/sprechblase_empty.gif";
+			}
+		}
+
+		function swapImages(imageName, otherName){
+    	if (document.images) {
+        	for (var i=0; i<swapImages.arguments.length; i+=2){
+            	eval("document." + imageName + ".src = " + otherName + ".src");
+        		}
+			}
+ 		}
+
+    function loadPage( ) {
+      var nEditionId = document.forms['edsel'].edition_id.options[document.forms['edsel'].edition_id.options.selectedIndex].value;
+      var sEditionName = document.forms['edsel'].edition_id.options[document.forms['edsel'].edition_id.options.selectedIndex].text;
+      if( sEditionName=="Frankfurt/M" )
+        sEditionName="frankfurt";
+      if( sEditionName=="München" )
+        sEditionName="muenchen";
+      sEditionName=sEditionName.toLowerCase();
+      if( nEditionId==1 )
+        document.forms['edsel'].submit();
+      if( nEditionId==2 || nEditionId==3 || nEditionId==4 || nEditionId==5 || nEditionId==6 )
+        document.location.href="http://flyer-old.fork.de/" + sEditionName;
+      if( nEditionId==7 || nEditionId==8 )
+        document.location.href="http://www.flyernyc.com";
+      if( nEditionId==9 )
+        document.location.href="http://urbanflyer.com";
+    }
+		</script>
+
+</head>
+<body bgcolor="#ffffff" text="black" link="#ff00ff" alink="#ff00ff" vlink="#ff00ff" marginHeight="0" marginWidth="0" topMargin="0" leftMargin="0" background="/mag/img/splash/bg_names.gif">
+
+
+<table border="0" cellpadding="0" cellspacing="0" height="98%">
+<tr>
+<td valign="top" align="left">
+<table border="0" cellpadding="0" cellspacing="0" width="719">
+<tr height="25">
+<td width="25" height="25"><img src="/mag/img/space.gif" width="25" height="25" border="0"></td>
+<td height="25" width="231"><img src="/mag/img/space.gif" width="231" height="25" border="0"></td>
+<td height="25" width="5"><img src="/mag/img/space.gif" width="5" height="25" border="0"></td>
+<td height="25" valign="bottom" align="right" colspan="3"></td>
+</tr>
+<tr height="13">
+<td width="25" height="13"></td>
+<td width="231" height="13"><img src="/mag/img/splash/pinktriangle.gif" width="13" height="13" border="0"></td>
+<td width="5" height="13"></td>
+<td width="434" height="13"><img src="/mag/img/splash/bluetriangle.gif" width="13" height="13" border="0"></td>
+<td width="20" height="13"></td>
+<td width="5" height="13"></td>
+</tr>
+<tr height="30">
+<td width="25" height="30"></td>
+<td width="231" height="30"></td>
+<td width="5" height="30"></td>
+<td width="434" height="30"></td>
+<td width="20" height="30"><img src="/mag/img/space.gif" width="22" height="30" border="0"></td>
+<td width="5" height="30"></td>
+</tr>
+<tr height="6">
+<td width="25" height="6"></td>
+<td width="231" valign="bottom" height="6"></td>
+<td width="5" height="6"></td>
+<td width="434" align="right" height="6" valign="bottom"><img src="/mag/img/splash/emnff5.gif" width="291" height="6" border="0"></td>
+<td width="20" height="6"></td>
+<td width="5" height="6"></td>
+</tr>
+<tr height="1">
+<td height="1" colspan="6"><img src="/mag/img/space.gif" width="719" height="1" border="0"></td>
+</tr>
+<tr height="277">
+<td width="25" height="277"></td>
+<td width="231" valign="top" height="277">
+<table border="0" cellpadding="0" cellspacing="0" width="231">
+<tr height="1">
+<td height="1" colspan="6"><img src="/mag/img/splash/flyer-online.gif" width="231" height="66" border="0"></td>
+</tr>
+<tr height="1">
+<td height="1" colspan="6"><img src="/mag/img/space.gif" width="231" height="1" border="0"></td>
+</tr>
+<tr height="1">
+<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="5" bgcolor="#666633"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+<td height="1" width="222" bgcolor="#666633"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+</tr>
+<tr height="1">
+<td width="1" height="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#dede94"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="5" bgcolor="#dede94"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+<td height="1" width="222" bgcolor="#dede94"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#dede94"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+</tr>
+<tr height="5">
+<td width="1" bgcolor="#666633" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td width="1" bgcolor="#dede94" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td width="5" bgcolor="#cccc66" rowspan="3"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+<td width="222" bgcolor="#cccc66" height="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+<td width="1" bgcolor="#adad5a" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td width="1" bgcolor="#666633" rowspan="3"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+</tr>
+<tr>
+<td width="222" bgcolor="#cccc66">
+<!-- content ganz linke spalte -->
+    <form name="edsel" method="get" action="$link.setPage("frames,Index.vm").setAction("MagLogin")">
+    <select name="edition_id" class="input200pink" onchange="loadPage()">
+    <option value="-1">Editions
+    #foreach($edition in $editions)
+    <option value="$edition.getEditionId()">$edition.getNameLong()
+    #end
+    </select>
+
+    <br>
+<br>
+<br>
+</td>
+</tr>
+</form>
+<tr height="10">
+<td height="10" width="222" bgcolor="#cccc66"><img src="/mag/img/space.gif" width="10" height="10" border="0"></td>
+</tr>
+<tr height="1">
+<td width="1" height="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#adad5a"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="5" bgcolor="#adad5a"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+<td height="1" width="222" bgcolor="#adad5a"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#666600"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+</tr>
+<tr height="1">
+<td width="1" height="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="5" bgcolor="#666633"><img src="/mag/img/space.gif" width="5" height="1" border="0"></td>
+<td height="1" width="222" bgcolor="#666633"><img src="/mag/img/space.gif" width="222" height="1" border="0"></td>
+<td height="1" width="1" bgcolor="#666633"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+<td height="1" width="1"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+</tr>
+</table>
+<br>
+<table border="0" cellpadding="0" cellspacing="0" height="112" width="231">
+<tr height="16">
+<td colspan="3" height="16"><img src="/mag/img/splash/grey-box_header.gif" width="231" height="16" border="0"></td>
+</tr>
+<tr height="91">
+<td height="91" width="6"><img src="/mag/img/splash/grey-box_left.gif" width="6" height="91" border="0"></td>
+<td height="91" width="88"><!-- cover start --><img src="/mag/img/splash/cover_berlin_29.gif" width="88" height="91" border="0"><!-- cover end --></td>
+<td height="91" width="137"><img src="/mag/img/splash/grey-box_right.gif" width="137" height="91" border="0"></td>
+</tr>
+<tr height="5">
+<td colspan="3" height="5"><img src="/mag/img/splash/grey-box_bottom.gif" width="231" height="5" border="0"></td>
+</tr>
+</table>
+</td>
+<td width="5" height="277"></td>
+<td width="434" valign="top" height="277"><img src="/mag/img/splash/map_block.gif" width="434" height="277" border="0"></td>
+<td width="20" height="277"></td>
+<td valign="top" width="5" height="277"><img src="/mag/img/splash/bluesmallrect.gif" width="5" height="13" border="0"></td>
+</tr>
+<tr height="14">
+<td width="25" height="14"></td>
+<td width="231" height="14"></td>
+<td width="5" height="14"></td>
+<td width="434" height="14" valign="top"><img src="/mag/img/splash/bottombits.gif" width="409" height="14" border="0"></td>
+<td width="20" height="14"></td>
+<td width="5" height="14" valign="top"><img src="/mag/img/splash/bluesmallrect.gif" width="5" height="13" border="0" vspace="1"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="bottom" align="left">
+<table border="0" cellpadding="0" cellspacing="0" width="719">
+<tr height="5">
+<td width="25" height="5"><img src="/mag/img/space.gif" width="25" height="5" border="0"></td>
+<td height="5" width="231"></td>
+<td height="5" width="5"><img src="/mag/img/space.gif" width="5" height="5" border="0"></td>
+<td height="5" valign="bottom" align="right" width="434"></td>
+<td width="20" height="5"></td>
+<td width="5" height="5"></td>
+</tr>
+<tr height="14">
+<td width="25" height="14"></td>
+<td width="231" height="14"></td>
+<td width="5" height="14"></td>
+<td width="434" height="14" align="right" valign="bottom"><img src="/mag/img/splash/sprechblase_empty.gif" width="257" height="65" border="0" name="sprechblase_austausch"></td>
+<td width="20" height="14"><img src="/mag/img/space.gif" width="22" height="14" border="0"></td>
+<td width="5" height="14"></td>
+</tr>
+<tr height="57">
+<td width="25" height="57"></td>
+<td width="231" height="57" valign="bottom"><a href="http://www.fork.de/" target="_blank"><img src="/mag/img/splash/mini4RK.gif" width="28" height="12" border="0"></a></td>
+<td width="5" height="57"></td>
+<td width="434" align="right" height="57" valign="top"><img src="/mag/img/splash/multinationale_left.gif" width="26" height="57" border="0"><img src="/mag/img/splash/multinationale_right.gif" width="257" height="57" border="0" usemap="#multinationale_map"></td>
+<td width="20" height="57"></td>
+<td width="5" height="57"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<map name="multinationale_map"><area shape="rect" coords="157,2,176,15" href="#" onMouseOut="swapImages('sprechblase_austausch','sprechblase_blank')" onMouseOver="swapImages('sprechblase_austausch','sprechblase_jp')"><area shape="rect" coords="84,2,103,15" href="#" onMouseOut="swapImages('sprechblase_austausch','sprechblase_blank')" onMouseOver="swapImages('sprechblase_austausch','sprechblase_en')"><area shape="rect" coords="11,2,30,15" href="#" onMouseOut="swapImages('sprechblase_austausch','sprechblase_blank')" onMouseOver="swapImages('sprechblase_austausch','sprechblase_de')"></map>
+<script language="JavaScript">
+preloadImages();
+	</script>
+
+    </form>
+</body></html>

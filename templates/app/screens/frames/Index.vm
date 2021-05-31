@@ -1,0 +1,30 @@
+## Index Frameset
+## @version: $Id: Index.vm,v 1.5 2001/09/10 13:34:46 heiko Exp $
+
+#set($edition_name = $data.getSession().getAttribute("activeEdition").getNameLong())
+#set($issue_name = $data.getSession().getAttribute("activeIssue").getName())
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<link rel="stylesheet" href="/mag/css/style.css">
+</head>
+
+<frameset rows="85,*,110" border="0" framespacing="0" frameborder="no" marginwidth=0 marginheight=0 margintop=0 marginleft=0>
+  <frame src="$link.setPage("header,HeaderHome.vm")" name="header" noresize scrolling="no" marginwidth=0 marginheight=0 margintop=0 marginleft=0>
+  <frameset cols="736,*" border="0" framespacing="0" frameborder="no" marginwidth=0 marginheight=0 margintop=0 marginleft=0>
+    <frame name="content" src="$link.setPage("Home.vm")" marginwidth=0 marginheight=0 margintop=0 marginleft=0>
+    <frame name="blank" src="$link.setPage("frames,Blank.vm")" noresize scrolling="no" >
+  </frameset>
+  <frame name="nav" src="$link.setPage("mainnav,MainNav.vm")" marginwidth=0 marginheight=0 noresize scrolling=no>
+</frameset>
+<noframes>
+
+<body bgcolor="#ffffff" text="black" link="#ff00ff" alink="#ff00ff" vlink="#ff00ff" marginHeight="0" marginWidth="0" topMargin="0" leftMargin="0">
+</body>
+
+</noframes>
+
+</html>
+
+

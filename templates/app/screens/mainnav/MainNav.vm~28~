@@ -1,0 +1,268 @@
+## Main Navigation
+## @version: $Id: MainNav.vm,v 1.12 2001/09/10 11:27:45 schmidt Exp $
+
+#set($lang_id = $data.getSession().getAttribute("activeIssue").getLangId())
+#if($lang_id.equals("1"))
+	#set($lang = "de")
+#elseif($lang_id.equals("2"))
+	#set($lang = "en")
+#end
+#set($imgType = ".gif")
+#set($underline = "_")
+#set($on = "on")
+#set($off = "off")
+#set($scriptType = ".js")
+#set($counter = 0)
+#set($counter2 = 0)
+#foreach($channel in $usedMagazineChannel)
+	#set($counter = $counter + 1)
+#end
+
+#set($rest = 5  - $counter)
+#if($counter == 0)
+	#set($rest = 4)
+#end
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="/mag/css/style.css">
+
+<style media="screen" type="text/css"><!--
+#trick 					{ position: absolute; z-index: 14; top: 1px; left: 1px; width: 1px; height: 1px; visibility: visible }
+#navbuttons	 			{ position: absolute; z-index: 3; top: 4px; left: 5px; width: 105px; height: 95px; visibility: visible }
+#events 				{ position: absolute; z-index: 5; top: 4px; left: 99px; width: 396px; height: 32px; visibility: hidden }
+#magazin 				{ position: absolute; z-index: 5; top: 26px; left: 99px; width: 396px; height: 32px; visibility: hidden }
+#locations		 		{ position: absolute; z-index: 5; top: 48px; left: 99px; width: 396px; height: 32px; visibility: hidden }
+#ueberuns		 		{ position: absolute; z-index: 5; top: 70px; left: 99px; width: 396px; height: 32px; visibility: hidden }
+#toolbox 				{ position: absolute; z-index: 10; top: 4px; left: 492px; width: 244px; height: 97px; visibility: visible }
+#go1 					{ position: absolute; z-index: 13; top: 24px; left: 705px; width: 22px; height: 18px; visibility: visible }
+#go2 					{ position: absolute; z-index: 13; top: 47px; left: 705px; width: 22px; height: 18px; visibility: visible }
+#go3 					{ position: absolute; z-index: 13; top: 70px; left: 705px; width: 22px; height: 18px; visibility: visible }
+#pulldownmyflyer 		{ position: absolute; z-index: 13; top: 47px; left: 583px; width: 69px; height: 36px; visibility: visible }
+#pulldowncityselector 	{ position: absolute; z-index: 13; top: 70px; left: 583px; width: 69px; height: 36px; visibility: visible }
+.navtext {text-align:left; width:235px; font:9px verdana; border-width:2px; border-style:outset; border-color:white; background-color:#FFDEEF; layer-background-color:#FFDEEF; color:black; }
+--></style>
+<script language="JavaScript" src="/mag/js/nav.js"></script>
+<script language="JavaScript" src="/mag/js/optix_$lang$scriptType"></script>
+<script language="JavaScript" src="/mag/js/alttxt.js"></script>
+<script language="JavaScript" src="/mag/js/form_lib.js"></script>
+<script language="JavaScript">
+  function loadPage( sCity ) {
+    //alert( sCity );
+    if( parent )
+
+  }
+</script>
+</head>
+<body bgcolor="#ffffff" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" background="/mag/img/backgrounds/bg_nav.gif">
+
+		<div id="trick"><img src="/mag/img/space.gif" width="1" height="1" border="0" name="space"></div>
+		<div id="navbuttons">
+			<table border="0" cellpadding="0" cellspacing="0" width="105" height="95">
+				<tr height="22">
+					<td width="105" height="22"><a href="$link.setPage("events,EventIndex.vm")" onMouseOut="swaptInvImages('button_events','button_events_off','navbuttons')" onMouseOver="swaptInvImages('button_events','button_events_on','navbuttons');show('events')" onMouseDown="javascript:tpusher('events');reset();" target="content"><img src="/mag/img/nav/button_events_$lang$imgType" width="105" height="22" border="0" name="button_events"></a></td>
+				</tr>
+				<tr height="22">
+					<td width="105" height="22"><a href="$link.setPage("magazine,MagazineIndex.vm")" onMouseOut="swaptInvImages('button_magazin','button_magazin_off','navbuttons')" onMouseOver="swaptInvImages('button_magazin','button_magazin_on','navbuttons');show('magazin')" onMouseDown="javascript:tpusher('magazin');reset();" target="content"><img src="/mag/img/nav/button_magazin_$lang$imgType" width="105" height="22" border="0" name="button_magazin"></a></td>
+				</tr>
+				<tr height="22">
+					<td width="105" height="22"><a href="$link.setPage("locations,LocationIndex.vm")" onMouseOut="swaptInvImages('button_locations','button_locations_off','navbuttons')" onMouseOver="swaptInvImages('button_locations','button_locations_on','navbuttons');show('locations')" onMouseDown="javascript:tpusher('locations');reset();" target="content"><img src="/mag/img/nav/button_locations_$lang$imgType" width="105" height="22" border="0" name="button_locations"></a></td>
+				</tr>
+				<tr height="22">
+					<td width="105" height="22"><a target="content" href="$link.setPage("ueber,Index.vm")" onMouseOut="swaptInvImages('button_ueberuns','button_ueberuns_off','navbuttons')" onMouseOver="swaptInvImages('button_ueberuns','button_ueberuns_on','navbuttons');show('ueberuns')" onMouseDown="javascript:tpusher('ueberuns');reset();"><img src="/mag/img/nav/button_ueberuns_$lang$imgType" width="105" height="22" border="0" name="button_ueberuns"></a></td>
+				</tr>
+				<tr height="7">
+					<td width="105" height="7" align="right"><img src="/mag/img/nav/bottom.gif" width="97" height="7" border="0"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="events">
+			<table border="0" cellpadding="0" cellspacing="0" width="387">
+				<tr height="14">
+					<td width="12" height="14"><img src="/mag/img/nav/corner.gif" width="12" height="14" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","nightlife")" onMouseOut="swapInvImages('events_nachtleben','events_nachtleben_off','events');swaptInvImages('button_events','button_events_off','navbuttons','no')" onMouseOver="swapInvImages('events_nachtleben','events_nachtleben_on','events');swaptInvImages('button_events','button_events_on','navbuttons','no')" onMouseDown="pusher('events_nachtleben','events');swapback();" target="content"><img src="/mag/img/nav/events/nachtleben_$lang$imgType" width="93" height="14" border="0" name="events_nachtleben"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","arts")" onMouseOut="swapInvImages('events_ausstellungen','events_ausstellungen_off','events');swaptInvImages('button_events','button_events_off','navbuttons','no')" onMouseOver="swapInvImages('events_ausstellungen','events_ausstellungen_on','events');swaptInvImages('button_events','button_events_on','navbuttons','no')" onMouseDown="pusher('events_ausstellungen','events');swapback();" target="content"><img src="/mag/img/nav/events/ausstellungen_$lang$imgType" width="93" height="14" border="0" name="events_ausstellungen"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","misc")" onMouseOut="swapInvImages('events_andere','events_andere_off','events');swaptInvImages('button_events','button_events_off','navbuttons','no')" onMouseOver="swapInvImages('events_andere','events_andere_on','events');swaptInvImages('button_events','button_events_on','navbuttons','no')" onMouseDown="pusher('events_andere','events');swapback();" target="content"><img src="/mag/img/nav/events/andere_$lang$imgType" width="93" height="14" border="0" name="events_andere"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><img src="/mag/img/nav/generic_corner.gif" width="93" height="14" border="0"></td>
+				</tr>
+				<tr height="1">
+					<td height="1" colspan="8"><img src="/mag/img/space.gif" width="387" height="1" border="0"></td>
+				</tr>
+				<tr height="14">
+					<td width="12" height="14"></td>
+					<td height="14" width="93"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","concerts")" onMouseOut="swapInvImages('events_konzerte','events_konzerte_off','events');swaptInvImages('button_events','button_events_off','navbuttons','no')" onMouseOver="swapInvImages('events_konzerte','events_konzerte_on','events');swaptInvImages('button_events','button_events_on','navbuttons','no')" onMouseDown="pusher('events_konzerte','events');swapback();" target="content"><img src="/mag/img/nav/events/konzerte_$lang$imgType" width="93" height="14" border="0" name="events_konzerte"></a></td>
+					<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("events,ShowEvents.vm").addQueryData("cmb_type","stage")" onMouseOut="swapInvImages('events_theater','events_theater_off','events');swaptInvImages('button_events','button_events_off','navbuttons','no')" onMouseOver="swapInvImages('events_theater','events_theater_on','events');swaptInvImages('button_events','button_events_on','navbuttons','no')" onMouseDown="pusher('events_theater','events');swapback();" target="content"><img src="/mag/img/nav/events/theater_$lang$imgType" width="93" height="14" border="0" name="events_theater"></a></td>
+					<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="14" width="93"><img src="/mag/img/nav/generic.gif" width="93" height="14" border="0"></td>
+					<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="14" width="93"><img src="/mag/img/nav/generic.gif" width="93" height="14" border="0"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="magazin">
+			<table border="0" cellpadding="0" cellspacing="0" width="387">
+				<tr height="14">
+					<td width="12" height="14"><img src="/mag/img/nav/corner.gif" width="12" height="14" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("magazine,ThemenIndex.vm")" onMouseOut="swapInvImages('magazin_themen','magazin_themen_off','magazin','no');swaptInvImages('button_magazin','button_magazin_off','navbuttons','no')" onMouseOver="swapInvImages('magazin_themen','magazin_themen_on','magazin','no');swaptInvImages('button_magazin','button_magazin_on','navbuttons','no')" onMouseDown="pusher('magazin_themen','magazin');swapback();" target="content"><img src="/mag/img/nav/magazin/themen_$lang$imgType" width="93" height="14" border="0" name="magazin_themen"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("magazine,BesprechungenIndex.vm")" onMouseOut="swapInvImages('magazin_besprechungen','magazin_besprechungen_off','magazin','no');swaptInvImages('button_magazin','button_magazin_off','navbuttons','no')" onMouseOver="swapInvImages('magazin_besprechungen','magazin_besprechungen_on','magazin','no');swaptInvImages('button_magazin','button_magazin_on','navbuttons','no')" onMouseDown="pusher('magazin_besprechungen','magazin');swapback();" target="content"><img src="/mag/img/nav/magazin/besprechungen_$lang$imgType" width="93" height="14" border="0" name="magazin_besprechungen"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93">#if($spezialHasContents)<a href="$link.setPage("magazine,SpezialIndex.vm")" onMouseOut="swapInvImages('magazin_spezial','magazin_spezial_off','magazin','no');swaptInvImages('button_magazin','button_magazin_off','navbuttons','no')" onMouseOver="swapInvImages('magazin_spezial','magazin_spezial_on','magazin','no');swaptInvImages('button_magazin','button_magazin_on','navbuttons','no')" onMouseDown="pusher('magazin_spezial','magazin');swapback();" target="content"><img src="/mag/img/nav/magazin/spezial_$lang$imgType" width="93" height="14" border="0" name="magazin_spezial"></a>#else<img src="/mag/img/nav/generic_corner.gif" width="93" height="14" border="0">#end</td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					#if($counter == 0)
+					<td height="14" width="93"><img src="/mag/img/nav/generic_corner.gif" width="93" height="14" border="0"></td>
+				#elseif($counter > 0)
+					#set($check = 0)
+					#foreach($channel in $usedMagazineChannel)
+						#set($channelName = $channel.getName())
+						#if($check < 1)
+							<td height="14" width="93"><a href="$link.setPage("magazine,ChannelDetail.vm").addQueryData("channel_id", $channel.getChannelId())" onMouseOut="swapInvImages('magazin$underline$channelName','magazin$underline$channelName$underline$off','magazin','no');swaptInvImages('button_magazin','button_magazin_off','navbuttons','no')" onMouseOver="swapInvImages('magazin_$channelName','magazin$underline$channelName$underline$on','magazin','no');swaptInvImages('button_magazin','button_magazin_on','navbuttons','no')" onMouseDown="pusher('magazin_$channelName','magazin');swapback();" target="content"><img src="/mag/img/nav/magazin/$channelName$underline$lang$imgType" width="93" height="14" border="0" name="magazin_$channelName"></a></td>
+						#end
+						#set($check = $check + 1)
+					#end
+				#end
+				</tr>
+				<tr height="1">
+					<td height="1" colspan="8"><img src="/mag/img/space.gif" width="387" height="1" border="0"></td>
+				</tr>
+				<tr height="14">
+					<td width="12" height="14"></td>
+					#set($check2 = 0)
+				#foreach($channel in $usedMagazineChannel)
+					#set($channelName = $channel.getName())
+					#if($check2 >= 1)
+						<td height="14" width="93"><a href="$link.setPage("magazine,ChannelDetail.vm").addQueryData("channel_id", $channel.getChannelId())" onMouseOut="swapInvImages('magazin$underline$channelName','magazin$underline$channelName$underline$off','magazin','no');swaptInvImages('button_magazin','button_magazin_off','navbuttons','no')" onMouseOver="swapInvImages('magazin_$channelName','magazin$underline$channelName$underline$on','magazin','no');swaptInvImages('button_magazin','button_magazin_on','navbuttons','no')" onMouseDown="pusher('magazin_$channelName','magazin');swapback();" target="content"><img src="/mag/img/nav/magazin/$channelName$underline$lang$imgType" width="93" height="14" border="0" name="magazin_$channelName"></a></td>
+						<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					#end
+					#set($check2 = $check2 + 1)
+				#end
+					#set($check3 = 0)
+				#foreach($bzzp in [1..$rest])
+					#if($check3 > 0)
+						<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					#end
+					<td height="14" width="93"><img src="/mag/img/nav/generic.gif" width="93" height="14" border="0"></td>
+					#set($check3 = $check3 + 1)
+				#end
+				</tr>
+			</table>
+		</div>
+		<div id="locations">
+			<table border="0" cellpadding="0" cellspacing="0" width="387">
+				<tr height="14">
+					<td width="12" height="14"><img src="/mag/img/nav/corner.gif" width="12" height="14" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","clubs")" onMouseOut="swapInvImages('locations_clubsundbars','locations_clubsundbars_off','locations','no');swaptInvImages('button_locations','button_locations_off','navbuttons','no')" onMouseOver="swapInvImages('locations_clubsundbars','locations_clubsundbars_on','locations','no');swaptInvImages('button_locations','button_locations_on','navbuttons','no')" onMouseDown="pusher('locations_clubsundbars','locations');swapback();" target="content"><img src="/mag/img/nav/locations/clubsundbars_$lang$imgType" width="93" height="14" border="0" name="locations_clubsundbars"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","cinemas")" onMouseOut="swapInvImages('locations_kinos','locations_kinos_off','locations','no');swaptInvImages('button_locations','button_locations_off','navbuttons','no')" onMouseOver="swapInvImages('locations_kinos','locations_kinos_on','locations','no');swaptInvImages('button_locations','button_locations_on','navbuttons','no')" onMouseDown="pusher('locations_kinos','locations');swapback();" target="content"><img src="/mag/img/nav/locations/kinos_$lang$imgType" width="93" height="14" border="0" name="locations_kinos"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","arts")" onMouseOut="swapInvImages('locations_galerienundmuseen','locations_galerienundmuseen_off','locations','no');swaptInvImages('button_locations','button_locations_off','navbuttons','no')" onMouseOver="swapInvImages('locations_galerienundmuseen','locations_galerienundmuseen_on','locations','no');swaptInvImages('button_locations','button_locations_on','navbuttons','no')" onMouseDown="pusher('locations_galerienundmuseen','locations');swapback();" target="content"><img src="/mag/img/nav/locations/galerienundmuseen_$lang$imgType" width="93" height="14" border="0" name="locations_galerienundmuseen"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","shopping_cat")" onMouseOut="swapInvImages('locations_shopping','locations_shopping_off','locations','no');swaptInvImages('button_locations','button_locations_off','navbuttons','no')" onMouseOver="swapInvImages('locations_shopping','locations_shopping_on','locations','no');swaptInvImages('button_locations','button_locations_on','navbuttons','no')" onMouseDown="pusher('locations_shopping','locations');swapback();" target="content"><img src="/mag/img/nav/locations/shopping_$lang$imgType" width="93" height="14" border="0" name="locations_shopping"></a></td>
+				</tr>
+				<tr height="1">
+					<td height="1" colspan="8"><img src="/mag/img/space.gif" width="387" height="1" border="0"></td>
+				</tr>
+				<tr height="14">
+					<td width="12" height="14"></td>
+					<td height="14" width="93"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","venues")" onMouseOut="swapInvImages('locations_veranstaltungsorte','locations_veranstaltungsorte_off','locations','no');swaptInvImages('button_locations','button_locations_off','navbuttons','no')" onMouseOver="swapInvImages('locations_veranstaltungsorte','locations_veranstaltungsorte_on','locations','no');swaptInvImages('button_locations','button_locations_on','navbuttons','no')" onMouseDown="pusher('locations_veranstaltungsorte','locations');swapback();" target="content"><img src="/mag/img/nav/locations/veranstaltungsorte_$lang$imgType" width="93" height="14" border="0" name="locations_veranstaltungsorte"></a></td>
+					<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","stage")" onMouseOut="swapInvImages('locations_theater','locations_theater_off','locations','no');swaptInvImages('button_locations','button_locations_off','navbuttons','no')" onMouseOver="swapInvImages('locations_theater','locations_theater_on','locations','no');swaptInvImages('button_locations','button_locations_on','navbuttons','no')" onMouseDown="pusher('locations_theater','locations');swapback();" target="content"><img src="/mag/img/nav/locations/theater_$lang$imgType" width="93" height="14" border="0" name="locations_theater"></a></td>
+					<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="14" width="93"><a href="$link.setPage("locations,ShowLocations.vm").addQueryData("cmb_type","food")" onMouseOut="swapInvImages('locations_essenundtrinken','locations_essenundtrinken_off','locations','no');swaptInvImages('button_locations','button_locations_off','navbuttons','no')" onMouseOver="swapInvImages('locations_essenundtrinken','locations_essenundtrinken_on','locations','no');swaptInvImages('button_locations','button_locations_on','navbuttons','no')" onMouseDown="pusher('locations_essenundtrinken','locations');swapback();" target="content"><img src="/mag/img/nav/locations/essenundtrinken_$lang$imgType" width="93" height="14" border="0" name="locations_essenundtrinken"></a></td>
+					<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="14" width="93"><img src="/mag/img/nav/generic.gif" width="93" height="14" border="0"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="ueberuns">
+			<table border="0" cellpadding="0" cellspacing="0" width="387">
+				<tr height="14">
+					<td width="12" height="14"><img src="/mag/img/nav/corner.gif" width="12" height="14" border="0"></td>
+					<td height="14" width="93"><a target="content" href="$link.setPage("ueber,History.vm")" onMouseOut="swapInvImages('ueberuns_geschichte','ueberuns_geschichte_off','ueberuns','no');swaptInvImages('button_ueberuns','button_ueberuns_off','navbuttons','no')" onMouseOver="swapInvImages('ueberuns_geschichte','ueberuns_geschichte_on','ueberuns','no');swaptInvImages('button_ueberuns','button_ueberuns_on','navbuttons','no')" onMouseDown="pusher('ueberuns_geschichte','ueberuns');swapback();"><img src="/mag/img/nav/ueberuns/geschichte_$lang$imgType" width="93" height="14" border="0" name="ueberuns_geschichte"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><a target="content" href="$link.setPage("ueber,Impressum.vm")" onMouseOut="swapInvImages('ueberuns_profil','ueberuns_profil_off','ueberuns','no');swaptInvImages('button_ueberuns','button_ueberuns_off','navbuttons','no')" onMouseOver="swapInvImages('ueberuns_profil','ueberuns_profil_on','ueberuns','no');swaptInvImages('button_ueberuns','button_ueberuns_on','navbuttons','no')" onMouseDown="pusher('ueberuns_profil','ueberuns');swapback();"><img src="/mag/img/nav/ueberuns/profil_$lang$imgType" width="93" height="14" border="0" name="ueberuns_profil"></a></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><img src="/mag/img/nav/generic.gif" width="93" height="14" border="0"></td>
+					<td height="14" width="1"><img src="/mag/img/space.gif" width="1" height="14" border="0"></td>
+					<td height="14" width="93"><img src="/mag/img/nav/generic_corner.gif" width="93" height="14" border="0"></td>
+				</tr>
+				<tr height="1">
+					<td height="1" colspan="8"><img src="/mag/img/space.gif" width="387" height="1" border="0"></td>
+				</tr>
+				<tr height="14">
+					<td width="12" height="14"></td>
+					<td height="14" width="93"><a href="javascript:alert('Coming soon!')" onMouseOut="swapInvImages('ueberuns_pressespiegel','ueberuns_pressespiegel_off','ueberuns','no');swaptInvImages('button_ueberuns','button_ueberuns_off','navbuttons','no')" onMouseOver="swapInvImages('ueberuns_pressespiegel','ueberuns_pressespiegel_on','ueberuns','no');swaptInvImages('button_ueberuns','button_ueberuns_on','navbuttons','no')" onMouseDown="pusher('ueberuns_pressespiegel','ueberuns');swapback();"><img src="/mag/img/nav/ueberuns/pressespiegel_$lang$imgType" width="93" height="14" border="0" name="ueberuns_pressespiegel"></a></td>
+					<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="14" width="93"><a target="content" href="$link.setPage("ueber,Contact.vm")" onMouseOut="swapInvImages('ueberuns_kontakt','ueberuns_kontakt_off','ueberuns','no');swaptInvImages('button_ueberuns','button_ueberuns_off','navbuttons','no')" onMouseOver="swapInvImages('ueberuns_kontakt','ueberuns_kontakt_on','ueberuns','no');swaptInvImages('button_ueberuns','button_ueberuns_on','navbuttons','no')" onMouseDown="pusher('ueberuns_kontakt','ueberuns');swapback();"><img src="/mag/img/nav/ueberuns/kontakt_$lang$imgType" width="93" height="14" border="0" name="ueberuns_kontakt"></a></td>
+					<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="14" width="93"><img src="/mag/img/nav/generic.gif" width="93" height="14" border="0"></td>
+					<td width="1" height="14"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="14" width="93"><img src="/mag/img/nav/generic.gif" width="93" height="14" border="0"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="toolbox">
+			<table border="0" cellpadding="0" cellspacing="0" width="244" height="92">
+				<tr height="17">
+					<td width="10" height="17"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td height="17" width="234"><img src="/mag/img/nav/toolbox.gif" width="234" height="17" border="0"></td>
+				</tr>
+				<tr height="23">
+					<td width="10" height="23" valign="top"><a href="javascript:void(0)" onmouseover="writetxt('Die totale Flyersuche')" onmouseout="writetxt(0)"><img src="/mag/img/nav/help.gif" width="10" height="13" border="0"></a></td>
+					<td width="234" height="23"><img src="/mag/img/nav/ultrasearch_$lang$imgType" width="234" height="23" border="0"></td>
+				</tr>
+				<tr height="23">
+					<td width="10" height="23" valign="top"><a href="javascript:void(0)" onmouseover="writetxt('Euer persönlicher Flyer')" onmouseout="writetxt(0)"><img src="/mag/img/nav/help.gif" width="10" height="13" border="0"></a></td>
+					<td width="234" height="23"><img src="/mag/img/nav/myflyer.gif" width="234" height="23" border="0"></td>
+				</tr>
+				<tr height="23">
+					<td width="10" height="23" valign="top"><a href="javascript:void(0)" onmouseover="writetxt('Wählt eure Stadt/Region')" onmouseout="writetxt(0)"><img src="/mag/img/nav/help.gif" width="10" height="13" border="0"></a></td>
+					<td width="234" height="23"><img src="/mag/img/nav/cityselector.gif" width="234" height="23" border="0"></td>
+				</tr>
+				<tr height="6">
+					<td width="10" height="6" valign="top"><img src="/mag/img/space.gif" width="1" height="1" border="0"></td>
+					<td width="234" height="6" valign="top"><img src="/mag/img/nav/toolbox_bottom.gif" width="234" height="6" border="0"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="go1"><a href="javascript:alert( 'Coming soon !' );" onMouseOut="swapInvImages('go_ultrasearch','go_ultrasearch_off','go1','no')"  onMouseOver="swapInvImages('go_ultrasearch','go_ultrasearch_on','go1','no')"><img src="/mag/img/nav/go.gif" width="22" height="18" border="0" name="go_ultrasearch"></a></div>
+		<div id="go2"><a href="javascript:alert( 'Coming soon !' );" onMouseOut="swapInvImages('go_myflyer','go_myflyer_off','go2','no')"  onMouseOver="swapInvImages('go_myflyer','go_myflyer_on','go2','no')"><img src="/mag/img/nav/go.gif" width="22" height="18" border="0" name="go_myflyer"></a></div>
+		<div id="go3"><a href="#" onMouseOut="swapInvImages('go_cityselector','go_cityselector_off','go3','no')"  onMouseOver="swapInvImages('go_cityselector','go_cityselector_on','go3','no')"><img src="/mag/img/nav/go.gif" width="22" height="18" border="0" name="go_cityselector"></a></div>
+		<div id="pulldownmyflyer">
+      <form name="form_myflyer">
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+        <td class="inputns4" valign="top">
+          <select name="pulldown_myflyer" class="input100pink"><option value="one">soon..</option></select>
+        </td>
+      </tr>
+			</table>
+      </form>
+		</div>
+		<div id="pulldowncityselector">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr><td class="inputns4">
+			<form name="form_cityselector">
+				<select name="pulldown_cityselector" class="input100pink" onchange="loadPage( getSelectedCmbValue( window, 'form_cityselector','pulldown_cityselector' ),
+                                                                                      getSelectedCmbText( window, 'form_cityselector','pulldown_cityselector' ) )">
+          #foreach($edition in $editions)
+            <option value="$edition.getEditionId()">$edition.getNameLong()
+          #end
+				</select>
+			</form>
+			</td></tr>
+			</table>
+		</div>
+		<div id="navtxt" class="navtext" style="position:absolute; top:-100px; left:0px; visibility:hidden; z-index:20"></div>
+		<script language="javaScript">
+		preloadImages();
+		</script>
+</body>
+</html>
+

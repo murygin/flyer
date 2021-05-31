@@ -1,0 +1,12 @@
+locations start
+
+was wird gezaehlt:
+
+kategorie - keywords
+clubs & bars - club, bar
+veranstaltungsorte - venue
+kino - cinema
+theater - theatre
+gelerien & museen - museum, gallery
+essen & trinken - restaurant, pub, bistro
+shopping - store

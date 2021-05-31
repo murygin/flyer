@@ -1,0 +1,53 @@
+<html>
+  <head>
+  <meta http-equiv=content-type content="text/html;charset=ISO-8859-1">
+  <meta http-equiv=document-type content="HTML 4.0 Transitional">
+  <link rel=stylesheet href="/mag/css/style.css">
+  <script language="javascript">
+    var sImgPath = "/mag/img/locator/";
+    var aPageDisplay = new Array( 'berlin_home.gif',
+                                  'berlin_events.gif',
+                                  'berlin_locations.gif',
+                                  'berlin_magazin.gif',
+                                  'berlin_ueberuns.gif' );
+
+    function setPageDisplay( i ) {
+      document.images['imgPageDisplay'].src = sImgPath + aPageDisplay[i];
+    }
+  </script>
+</head>
+<body bgcolor="#ffffff" marginheight=0 marginwidth=0 topmargin=0 leftmargin=0 background="/mag/img/backgrounds/bg_head.gif">
+<table border="0" cellpadding="0" cellspacing="0" width="736" height="82">
+<tr height="5">
+<td height="5" colspan="7"><img src="/mag/img/space.gif" width="736" height="5" border="0"></td>
+</tr>
+<tr height="5">
+<td width="5" rowspan="7"><img src="/mag/img/space.gif" width="5" height="77" border="0"></td>
+<td height="5" colspan="6"><img src="/mag/img/layout/header_top.gif" width="731" height="9" border="0"></td>
+</tr>
+<tr height="11">
+<td width="115" rowspan="5"><a href="$link.setPage("Home.vm")" target="content"><img src="/mag/img/layout/header_logo.gif" width="115" height="60" border="0"></a></td>
+<td height="11" width="111"><img src="/mag/img/layout/header_wobinich_de.gif" width="111" height="11" border="0"></td>
+<td width="10" rowspan="5"><img src="/mag/img/layout/header_border.gif" width="10" height="60" border="0"></td>
+<td rowspan="5" width="468"><img src="/mag/img/banner/dimitry.gif" width="468" height="60" border="0"></td>
+<td rowspan="5" width="21"><img src="/mag/img/layout/header_battery.gif" width="21" height="60" border="0"></td>
+<td rowspan="5" width="6"><img src="/mag/img/layout/border_right.gif" width="6" height="60" border="0"></td>
+</tr>
+<tr height="21">
+<td width="111" height="21"><img name="imgPageDisplay" src="/mag/img/locator/berlin_magazin.gif" width="111" height="21" border="0"></td>
+</tr>
+<tr height="7">
+<td width="111" height="7"><img src="/mag/img/layout/header_seperator_1.gif" width="111" height="7" border="0"></td>
+</tr>
+<tr height="16">
+<td width="111" height="16"><img src="/mag/img/layout/header_lcd.gif" width="111" height="16" border="0"></td>
+</tr>
+<tr height="5">
+<td width="111" height="5"><img src="/mag/img/layout/header_seperator_2.gif" width="111" height="5" border="0"></td>
+</tr>
+<tr height="8">
+<td colspan="6" height="8"><img src="/mag/img/layout/header_bottom.gif" width="731" height="8" border="0"></td>
+</tr>
+</table>
+</body></html>
+

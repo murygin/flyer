@@ -1,0 +1,66 @@
+## Mode Template
+## @version: $Id: Mode.vm,v 1.2 2001/09/06 10:53:40 heiko Exp $
+
+<html>
+<head>
+<title>Mode</title>
+<script language="javascript">
+var srcPath = "$imgSrcPath";
+
+var thumbs = new Array(
+    #foreach($image in $thumbnails)
+    '$image.getSystemId()',        
+    #end 
+    'null'
+    );
+
+var regulars = new Array(
+    #foreach($image in $regulars)
+    '$image.getSystemId()',        
+    #end 
+    'null'
+    );                        
+
+function swapImg(i) {
+    document.images['reg'].src = srcPath + regulars[i];
+}
+</script>
+</head>
+<body bgcolor=#ffffff>
+
+<h3>Mode</h3>
+
+<table width="750" border="1" cellpadding=5>
+    <tr valign="top">
+        <td width="30%">
+        <!-- left part -->
+        <!-- thumbnails -->
+            #set($c=0)
+            #foreach($image in $thumbnails)
+            <a href="javascript:swapImg($c)">
+                <img src="$imgSrcPath$image.getSystemId()"></a>
+                #set($c = $c+1)
+            #end  
+
+        </td>
+        <td width="70%">
+
+        <!-- right part -->
+            <table width="100%" border="1">
+                <tr valign="top">
+                    <td>
+        <i>$modeItem.getHeading()</i><br>
+        $modeItem.getSubheading()<p>        
+                                              
+                        <p>                      
+                        <!-- regulars --> 
+                        #set($firstSrc = $regulars.elementAt(0).getSystemId())
+                        <img src="$imgSrcPath$firstSrc" name="reg">
+                       
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body></html>

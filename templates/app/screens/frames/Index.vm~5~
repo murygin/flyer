@@ -1,0 +1,30 @@
+## Index Frameset
+## @version: $Id: Index.vm,v 1.2 2001/09/06 10:18:12 heiko Exp $
+
+#set($edition_name = $data.getSession().getAttribute("activeEdition").getNameLong())
+#set($issue_name = $data.getSession().getAttribute("activeIssue").getName())
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<frameset rows="85,*,110" border="0" framespacing="0" frameborder="no">
+  <frame src="$link.setPage("header,Headerhome.vm")" name="header" noresize scrolling="no">
+  <frameset cols="736,*" border="0" framespacing="0" frameborder="no">
+    <frame name="content" src="$link.setPage("Home.vm")">
+    <frame name="blank" src="$link.setPage("frames,Blank.vm")" noresize scrolling="no">
+  </frameset>
+  <frame name="nav" src="$link.setPage("mainnav,MainNav.vm")" marginwidth=0 marginheight=0 noresize scrolling=no>
+</frameset>
+<noframes>
+
+<body bgcolor="#ffffff" text="black" link="#ff00ff" alink="#ff00ff" vlink="#ff00ff" marginHeight="0" marginWidth="0" topMargin="0" leftMargin="0">
+</body>
+
+</noframes>
+
+</html>
+
+
